@@ -1,0 +1,4 @@
+
+//function prototypes
+void init();
+
