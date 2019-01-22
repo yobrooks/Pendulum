@@ -13,6 +13,7 @@ int main(int argc, char** argv)
     init ();
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
+    glutIdleFunc(display);
     glutMainLoop();
     return 0;
 }

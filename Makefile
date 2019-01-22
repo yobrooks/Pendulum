@@ -6,7 +6,7 @@
 CXX = g++
 LDLIBS = -lglut -lGL -lGLU -lm
 HEADERS = openGl.h globals.h constants.h prototypes.h
-OBJS = init.o display.o pendMath.o runPhys.o reshape.o
+OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o
 
 debug ?= n
 ifeq ($(debug), y)
@@ -37,6 +37,9 @@ runPhys.o : runPhys.cpp $(HEADERS)
 
 reshape.o : reshape.cpp $(HEADERS)
 	$(CXX) $(CFLAGS) reshape.cpp -c
+
+frameRate.o : frameRate.cpp $(HEADERS)
+	$(CXX) $(CFLAGS) frameRate.cpp -c
 
 clean:
 	rm *.o

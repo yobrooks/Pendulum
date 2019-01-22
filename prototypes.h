@@ -7,3 +7,4 @@ void run();
 double thetadot(double , double , double);
 double omegadot(double , double , double);
 void step(double*, double*, double* );
+void showFPS();

@@ -25,5 +25,6 @@ void display()
             (GLint)    20 );
     glPopMatrix();
 
-    glFlush();
+	showFPS();
+    glutSwapBuffers();
 }
