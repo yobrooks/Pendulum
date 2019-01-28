@@ -16,18 +16,8 @@ void display()
     glColor3f(0.0,1.0,0.0);
   
 
-    glPushMatrix();
-    glTranslated(2.0,0.0,0.0);
-    glRotated((double)180*theta/M_PI, 1, 0, 0);
-    glRotated((double)180*theta/M_PI, 0, 0, 1);
-    glTranslated(2.0,0.0,0.0);
-    glColor3f (0.0,0.0,1.0);
-    gluSphere(gluNewQuadric(),
-            (GLdouble) 0.5,
-            (GLint)    10,
-            (GLint)    10 );
-    glPopMatrix();
-
+    drawSphere();
+    drawBase();
   //  showFPS();
     glutSwapBuffers();
 }

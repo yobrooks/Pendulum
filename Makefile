@@ -6,7 +6,7 @@
 CXX = g++
 LDLIBS = -lglut -lGL -lGLU -lm
 HEADERS = openGl.h globals.h constants.h prototypes.h
-OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o
+OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o
 
 debug ?= n
 ifeq ($(debug), y)
@@ -40,6 +40,12 @@ reshape.o : reshape.cpp $(HEADERS)
 
 frameRate.o : frameRate.cpp $(HEADERS)
 	$(CXX) $(CFLAGS) frameRate.cpp -c
+
+drawShape.o : drawShape.cpp $(HEADERS)
+	$(CXX) $(CFLAGS) drawShape.cpp -c
+
+keyboard.o : keyboard.cpp $(HEADERS)
+	$(CXX) $(CFLAGS) keyboard.cpp -c
 
 clean:
 	rm *.o
