@@ -1,6 +1,7 @@
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
+#include <math.h>
 
 void display()
 {
@@ -13,18 +14,20 @@ void display()
     glEnable(GL_DEPTH_TEST);
 
     glColor3f(0.0,1.0,0.0);
+  
 
     glPushMatrix();
     glTranslated(2.0,0.0,0.0);
+    glRotated((double)180*theta/M_PI, 1, 0, 0);
+    glRotated((double)180*theta/M_PI, 0, 0, 1);
+    glTranslated(2.0,0.0,0.0);
     glColor3f (0.0,0.0,1.0);
-    gluCylinder(gluNewQuadric(),
-            (GLdouble) 0.1,
-            (GLdouble) 0.1,
-            (GLdouble) 4.0,
-            (GLint)    20,
-            (GLint)    20 );
+    gluSphere(gluNewQuadric(),
+            (GLdouble) 0.5,
+            (GLint)    10,
+            (GLint)    10 );
     glPopMatrix();
 
-	showFPS();
+  //  showFPS();
     glutSwapBuffers();
 }

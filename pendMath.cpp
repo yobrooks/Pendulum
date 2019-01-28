@@ -22,10 +22,10 @@ double omegadot(double t, double theta, double omega)
    num = -b*omega + A*cos(k*t);
    denom = m*R*R;
 
- return -g/R*theta;
+ //return -g/R*theta;
 
 
- //return (-g/R*sin(theta)+num)/denom;
+ return (-g/R*sin(theta)+num)/denom;
 }
 
 void step(double *t, double *theta, double *omega )

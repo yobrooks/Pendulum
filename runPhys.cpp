@@ -1,3 +1,4 @@
+#include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
 #include <stdio.h>
@@ -5,12 +6,11 @@
 
 void run()
 {
-   double t=0.0;
-   double theta=M_PI/4.0;
-   double omega=0.0;
 
    for (long i=0; i<2*Nstep; i++ ) {
-      printf("%f %f %f\n", t, theta, omega);
+     // printf("%f %f %f\n", t, theta, omega);
       step( &t, &theta, &omega);
    }
+
+   glutPostRedisplay();
 }
