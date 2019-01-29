@@ -13,6 +13,8 @@ float findFPS()
 	{
 		fps = (frame*1000.0)/(currentTime - oldTime);
 		oldTime = currentTime;
+		//theta = angle, omega = velocity
+		//how long period is in frames; calculate when omega changes signs and multiple by 2
 		frame = 0;
 	}
 
@@ -34,7 +36,7 @@ void drawFPS()
 {
 
 	char *charString = (char*) malloc(12*sizeof(char));
-	sprintf(charString, "FPS: %6.1f", findFPS());
+	sprintf(charString, "FPS: %.0f", findFPS());
 
 	glMatrixMode(GL_PROJECTION);
 	glPushMatrix();

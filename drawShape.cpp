@@ -2,13 +2,14 @@
 #include "prototypes.h"
 #include "globals.h"
 #include <math.h>
+#include <iostream>
 
 
 //make smaller 
 void drawSphere()
 {
     glPushMatrix();
- //      glTranslated(2.0,0.0,0.0);
+       //glTranslated(10.0,0.0,0.0);
        glRotated((double)180*theta/M_PI, 1, 0, 0);
        glRotated((double)180*theta/M_PI, 0, 0, 1);
        glTranslated(2.0,0.0,0.0);
@@ -18,6 +19,8 @@ void drawSphere()
             (GLint)    10,
             (GLint)    10 );
      glPopMatrix();
+
+ 	//std::cout << "Theta: " << theta << std::endl;
 }
 
 /*void drawArm()
