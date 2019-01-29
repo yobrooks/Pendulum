@@ -3,7 +3,8 @@
 #include <iostream>
 #include <stdio.h>
 
-float findFPS()
+//float findFPS()
+void findFPS()
 {
 	float fps;
 	frame++;
@@ -13,12 +14,14 @@ float findFPS()
 	{
 		fps = (frame*1000.0)/(currentTime - oldTime);
 		oldTime = currentTime;
+//		std::cout << "FPS: " << fps << std::endl;
+	//	drawFPS(fps);
 		//theta = angle, omega = velocity
 		//how long period is in frames; calculate when omega changes signs and multiple by 2
 		frame = 0;
 	}
 
-	return fps;
+	//return fps;
 }
 
 void drawString(int x, int y, void *font, const char *string)
@@ -35,9 +38,9 @@ void drawString(int x, int y, void *font, const char *string)
 void drawFPS()
 {
 
+	findFPS();
 	char *charString = (char*) malloc(12*sizeof(char));
-	sprintf(charString, "FPS: %.0f", findFPS());
-
+	sprintf(charString, "FPS: %.0f", fps);
 	glMatrixMode(GL_PROJECTION);
 	glPushMatrix();
 	glLoadIdentity();
@@ -57,3 +60,4 @@ void drawFPS()
 
 	free(charString);
 }
+

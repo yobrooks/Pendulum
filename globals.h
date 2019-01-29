@@ -7,3 +7,4 @@ extern int oldTime;
 extern double theta;
 extern double omega;
 extern double t;
+extern float fps;

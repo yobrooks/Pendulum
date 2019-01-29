@@ -8,3 +8,4 @@ int oldTime = 0;
 double t = 0.0;
 double omega = 0.0;
 double theta = M_PI/4.0;
+float fps = (float) 0.0;
