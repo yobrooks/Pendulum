@@ -18,6 +18,6 @@ void display()
 
     drawSphere();
     drawBase();
-  //  showFPS();
+    drawFPS();
     glutSwapBuffers();
 }
