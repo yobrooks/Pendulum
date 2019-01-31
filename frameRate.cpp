@@ -6,7 +6,7 @@
 //float findFPS()
 void findFPS()
 {
-	float fps;
+//	float fps;
 	frame++;
 	int currentTime = glutGet(GLUT_ELAPSED_TIME);
 	
@@ -14,8 +14,8 @@ void findFPS()
 	{
 		fps = (frame*1000.0)/(currentTime - oldTime);
 		oldTime = currentTime;
-//		std::cout << "FPS: " << fps << std::endl;
-	//	drawFPS(fps);
+	//	std::cout << "FPS: " << fps << std::endl;
+
 		//theta = angle, omega = velocity
 		//how long period is in frames; calculate when omega changes signs and multiple by 2
 		frame = 0;
@@ -39,6 +39,7 @@ void drawFPS()
 {
 
 	findFPS();
+//	std::cout << "FPS: " << fps << std::endl;
 	char *charString = (char*) malloc(12*sizeof(char));
 	sprintf(charString, "FPS: %.0f", fps);
 	glMatrixMode(GL_PROJECTION);

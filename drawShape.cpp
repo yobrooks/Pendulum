@@ -15,26 +15,21 @@ void drawSphere()
        glTranslated(2.0,0.0,0.0);
        glColor3f (0.0,0.0,1.0);
        gluSphere(gluNewQuadric(),
-            (GLdouble) 0.5,
+            (GLdouble) 0.3,
             (GLint)    10,
             (GLint)    10 );
      glPopMatrix();
 
- 	//std::cout << "Theta: " << theta << std::endl;
 }
 
-/*void drawArm()
+void drawString()
 {
 	
 }
-
-drawStand()
-{
-	
-}*/
 
 void drawBase()
 {
+	//draw base make lower
 	glPushMatrix();
 	glTranslated(0.0, 5.0, 0.0); //moved it to the right
 	glTranslated(0.0, 0.0, -3.0); 
@@ -47,8 +42,9 @@ void drawBase()
 		(GLint) 40, (GLint) 40);
 	glPopMatrix();
 
+//draw stand on top of base //move further back 
 	glPushMatrix();
-	glTranslated(0.0, 5.0, 0.0);
+	glTranslated(0.0, 5.5, 0.0);
 	glTranslated(0.0, 0.0, -2.0);
 	glColor3f(1.0, 0.0, 0.0);
 	gluCylinder(gluNewQuadric(),
@@ -60,12 +56,16 @@ void drawBase()
 	
 	//draw arm
 	glPushMatrix();
-	glRotated(180.0, 0.0, 1.0, 0.0);
+	glTranslated(0.0, 5.7, 0.0);
+	glTranslated(0.0, 0.0, 2.7);
+	glRotated(90.0, 1.0, 0.0, 0.0);
 	glColor3f(1.0, 1.0, 0.0);
 	gluCylinder(gluNewQuadric(), 
-		(GLdouble) 0.1,
-		(GLdouble) 0.1,
-		(GLdouble) 1.0, 
+		(GLdouble) 0.2,
+		(GLdouble) 0.2,
+		(GLdouble) 2.5, 
 		(GLint) 10, (GLint) 10);
 	glPopMatrix();
 }
+
+
