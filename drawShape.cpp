@@ -9,8 +9,8 @@
 void drawSphere()
 {
     glPushMatrix();
-       //glTranslated(10.0,0.0,0.0);
-       glRotated((double)180*theta/M_PI, 1, 0, 0);
+       glTranslated(0.0,2.0,0.0);
+       //glRotated((double)180*theta/M_PI, 1, 0, 0);
        glRotated((double)180*theta/M_PI, 0, 0, 1);
        glTranslated(2.0,0.0,0.0);
        glColor3f (0.0,0.0,1.0);
@@ -20,11 +20,6 @@ void drawSphere()
             (GLint)    10 );
      glPopMatrix();
 
-}
-
-void drawString()
-{
-	
 }
 
 void drawBase()
@@ -64,6 +59,19 @@ void drawBase()
 		(GLdouble) 0.2,
 		(GLdouble) 0.2,
 		(GLdouble) 2.5, 
+		(GLint) 10, (GLint) 10);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(0.0, 3.5, 0.0);
+	glTranslated(0.0, 0.0, 2.3);
+	glRotated((double)180*theta/M_PI,1.0, 0.0, 0.0); 
+	glTranslated(0.0, 0.0, -2.3);
+	glColor3f(1.0, 0.0, 1.0);
+	gluCylinder(gluNewQuadric(), 
+		(GLdouble) 0.1, 
+		(GLdouble) 0.1,
+		(GLdouble) 3.0,
 		(GLint) 10, (GLint) 10);
 	glPopMatrix();
 }
