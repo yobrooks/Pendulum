@@ -9,42 +9,32 @@
 void drawSphere()
 {
     glPushMatrix();
-       glTranslated(0.0,2.0,0.0);
+      // glTranslated(0.0,2.0,0.0);
        //glRotated((double)180*theta/M_PI, 1, 0, 0);
-       glRotated((double)180*theta/M_PI, 0, 0, 1);
-       glTranslated(2.0,0.0,0.0);
+       //glRotated((double)180*theta/M_PI, 0, 0, 1);
+      // glTranslated(2.0,0.0,0.0);
        glColor3f (0.0,0.0,1.0);
        gluSphere(gluNewQuadric(),
-            (GLdouble) 0.3,
+            (GLdouble) 0.2,
             (GLint)    10,
             (GLint)    10 );
      glPopMatrix();
 
 }
 
-void drawString()
+void drawStand()
 {
-	
-}
-
-void drawBase()
-{
-	//draw base make lower
+	//draw base
 	glPushMatrix();
-	glTranslated(0.0, 5.0, 0.0); //moved it to the right
-	glTranslated(0.0, 0.0, -3.0); 
 	glColor3f(0.0, 1.0, 0.0);
-	//gluQuadricDrawStyle(gluCylinder, GL_FILL);
-	gluCylinder(gluNewQuadric(), 
-		(GLdouble) 2.0,
-		(GLdouble) 2.0,
-		(GLdouble) 1.0,
-		(GLint) 40, (GLint) 40);
+	glScaled(5.0, 5.0, 0.5);
+	glTranslated(0.0, 0.0, -4.5);
+	glutSolidCube(1.0);
 	glPopMatrix();
 
 //draw stand on top of base //move further back 
 	glPushMatrix();
-	glTranslated(0.0, 5.5, 0.0);
+	glTranslated(0.0, 2.0, 0.0);
 	glTranslated(0.0, 0.0, -2.0);
 	glColor3f(1.0, 0.0, 0.0);
 	gluCylinder(gluNewQuadric(),
@@ -56,7 +46,7 @@ void drawBase()
 	
 	//draw arm
 	glPushMatrix();
-	glTranslated(0.0, 5.7, 0.0);
+	glTranslated(0.0, 2.2, 0.0);
 	glTranslated(0.0, 0.0, 2.7);
 	glRotated(90.0, 1.0, 0.0, 0.0);
 	glColor3f(1.0, 1.0, 0.0);
@@ -68,15 +58,15 @@ void drawBase()
 	glPopMatrix();
 	
 	glPushMatrix();
-        glTranslated(0.0, 3.5, 0.0);
-        glTranslated(0.0, 0.0, 2.3);
-        glRotated((double)180*theta/M_PI,1.0, 0.0, 0.0);
-        glTranslated(0.0, 0.0, -2.3);
+        //glTranslated(0.0, 0.0, 0.0);
+       // glTranslated(0.0, 0.0, 2.3);
+       // glRotated((double)180*theta/M_PI,1.0, 0.0, 0.0);
+       // glTranslated(0.0, 0.0, -2.3);
         glColor3f(1.0, 0.0, 1.0);
         gluCylinder(gluNewQuadric(),
                 (GLdouble) 0.1,
                 (GLdouble) 0.1,
-                (GLdouble) 3.0,
+                (GLdouble) 2.5,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
 

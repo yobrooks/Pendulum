@@ -17,8 +17,9 @@ void display()
   
 
     drawSphere();
-    drawBase();
+    drawStand();
     drawFPS();
-   //findFPS();
+    glutWireCube(5.0);
+   
     glutSwapBuffers();
 }
