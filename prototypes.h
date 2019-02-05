@@ -11,7 +11,7 @@ void step(double*, double*, double* );
 void findFPS();
 void drawSphere();
 void keyboard(unsigned char, int ,int);
-void drawBase();
+void drawStand();
 void drawString(int x, int y, void *font, const char *string);
 void drawFPS();
-
+void drawScale();
