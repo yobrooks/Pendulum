@@ -17,16 +17,20 @@ double omegadot(double t, double theta, double omega)
    static double A = 0.00;  // Amplitude of initial driving force
    static double k = 0.00;  // Frequency parameter of initial driving force
 
-   double num, denom;
+   double num, denom, pnum;
 
+   pnum=R/g;
    num = -b*omega + A*cos(k*t);
    denom = m*R*R;
 
+   period = (double)((2.0*M_PI)*sqrt(pnum));
  //return -g/R*theta;
 
 
  return (-g/R*sin(theta)+num)/denom;
 }
+
+ 
 
 void step(double *t, double *theta, double *omega )
 {

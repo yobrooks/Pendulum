@@ -39,7 +39,7 @@ void drawFPS()
 {
 
 	findFPS();
-//	std::cout << "FPS: " << fps << std::endl;
+
 	char *charString = (char*) malloc(12*sizeof(char));
 	sprintf(charString, "FPS: %.0f", fps);
 	glMatrixMode(GL_PROJECTION);

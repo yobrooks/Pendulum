@@ -9,10 +9,10 @@
 void drawSphere()
 {
     glPushMatrix();
-      // glTranslated(0.0,2.0,0.0);
+       //glTranslated(0.0,2.0,0.0);
        //glRotated((double)180*theta/M_PI, 1, 0, 0);
        //glRotated((double)180*theta/M_PI, 0, 0, 1);
-      // glTranslated(2.0,0.0,0.0);
+       //glTranslated(2.0,0.0,0.0);
        glColor3f (0.0,0.0,1.0);
        gluSphere(gluNewQuadric(),
             (GLdouble) 0.3,
@@ -103,7 +103,7 @@ void drawScale()
 
 	glPushMatrix();
 	//arms
-	glColor3f(0.0, 1.0, 1.0);
+/*	glColor3f(0.0, 1.0, 1.0);
 	glRotated(90.0, 1.0, 0.0, 0.0);
 	gluCylinder(gluNewQuadric(), 
 		(GLdouble) 0.2,
@@ -112,7 +112,7 @@ void drawScale()
 		(GLint) 10, (GLint) 10);
 
 	glPopMatrix();
-/*	glTranslated(0.0, 0.0, 6.0);
+	glTranslated(0.0, 0.0, 6.0);
 	gluCylinder(gluNewQuadric(),
 		(GLdouble) 0.5,
 		(GLdouble) 0.5,

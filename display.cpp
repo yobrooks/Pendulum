@@ -20,6 +20,7 @@ void display()
     drawStand();
     drawScale();
     drawFPS();
+    drawPeriod();
     glutWireCube(5.0);
    
     glutSwapBuffers();
