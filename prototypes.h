@@ -14,4 +14,4 @@ void keyboard(unsigned char, int ,int);
 void drawStand();
 void drawString(int x, int y, void *font, const char *string);
 void drawFPS();
-
+void drawScale();

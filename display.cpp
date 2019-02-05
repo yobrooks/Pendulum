@@ -18,6 +18,7 @@ void display()
 
     drawSphere();
     drawStand();
+    drawScale();
     drawFPS();
     glutWireCube(5.0);
    
