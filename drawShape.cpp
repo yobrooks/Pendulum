@@ -92,18 +92,18 @@ void drawScale()
 	//neck/body
 	glPushMatrix();
 	glTranslated(0.0, 5.0, 0.0);
-	glTranslated(0.0, 0.0, -2.0);
+	glTranslated(0.0, 0.0, -1.5);
 	gluCylinder(gluNewQuadric(),
 		(GLdouble) 0.2,
 		(GLdouble) 0.2,
-		(GLdouble) 5.0,
+		(GLdouble) 4.5,
 		(GLint) 10,(GLint) 10);
 
 	glPopMatrix();	
 
 	//arms
 	glPushMatrix();
-	glTranslated(0.0, 4.8, 1.0);
+	glTranslated(0.0, 4.8, 1.3);
 	glRotated(80.0, 1.0, 0.0, 0.0);
 	gluCylinder(gluNewQuadric(), 
 		(GLdouble) 0.2,
@@ -114,7 +114,7 @@ void drawScale()
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(0.0, 5.2, 1.0);
+	glTranslated(0.0, 5.2, 1.3);
 	glRotated(-80.0, 1.0, 0.0, 0.0);
 	gluCylinder(gluNewQuadric(),
 		(GLdouble) 0.2,
@@ -126,22 +126,22 @@ void drawScale()
 
 	//legs 
 	glPushMatrix();
-	glTranslated(0.0, 4.9, -2.7);
+	glTranslated(0.0, 4.9, -1.5);
 	glRotated(150.0, 1.0, 0.0, 0.0);
 	gluCylinder(gluNewQuadric(),
 		(GLdouble) 0.2,
 		(GLdouble) 0.2,
-		(GLdouble) 2.0,
+		(GLdouble) 2.5,
 		(GLint) 10, (GLint) 10);
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(0.0, 5.1, -2.7);
+	glTranslated(0.0, 5.1, -1.5);
 	glRotated(-150.0, 1.0, 0.0, 0.0);
 	gluCylinder(gluNewQuadric(),
 		(GLdouble) 0.2,
 		(GLdouble) 0.2,
-		(GLdouble) 2.0,
+		(GLdouble) 2.5,
 		(GLint) 10, (GLint) 10);
 
 	glPopMatrix();
