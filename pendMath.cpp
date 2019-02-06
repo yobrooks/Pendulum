@@ -19,11 +19,11 @@ double omegadot(double t, double theta, double omega)
 
    double num, denom, pnum;
 
-   pnum=R/g;
+ //  pnum=R/g;
    num = -b*omega + A*cos(k*t);
    denom = m*R*R;
 
-   period = (double)((2.0*M_PI)*sqrt(pnum));
+   //period = (double)((2.0*M_PI)*sqrt(pnum));
  //return -g/R*theta;
 
 

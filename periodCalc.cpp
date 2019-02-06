@@ -4,7 +4,10 @@
 #include <iostream>
 #include <stdio.h>
 
+void findPeriod()
+{
 
+}
 
 void drawPeriod()
 {
