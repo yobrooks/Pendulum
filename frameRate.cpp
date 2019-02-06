@@ -52,7 +52,7 @@ void drawFPS()
 	glLoadIdentity();
 
 	glColor3f(255, 255, 255);
-	drawString(50, 50, GLUT_BITMAP_HELVETICA_12, charString);
+	drawString(50, 100, GLUT_BITMAP_HELVETICA_12, charString);
 
 	glPopMatrix();
 	glMatrixMode(GL_PROJECTION);

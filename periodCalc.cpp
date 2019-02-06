@@ -10,7 +10,7 @@ void drawPeriod()
 {
 
         char *charString = (char*) malloc(12*sizeof(char));
-        sprintf(charString, "Period: %.1f", period);
+        sprintf(charString, "Period: %.1f sec", period);
         glMatrixMode(GL_PROJECTION);
         glPushMatrix();
         glLoadIdentity();
@@ -21,7 +21,7 @@ void drawPeriod()
         glLoadIdentity();
 
         glColor3f(255, 255, 255);
-        drawString(50, 100, GLUT_BITMAP_HELVETICA_12, charString);
+        drawString(50, 75, GLUT_BITMAP_HELVETICA_12, charString);
 
         glPopMatrix();
         glMatrixMode(GL_PROJECTION);
