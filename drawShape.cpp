@@ -5,20 +5,20 @@
 #include <iostream>
 
 
-//make smaller 
+
 void drawSphere()
 {
-    glPushMatrix();
-       //glTranslated(0.0,2.0,0.0);
-       //glRotated((double)180*theta/M_PI, 1, 0, 0);
-       //glRotated((double)180*theta/M_PI, 0, 0, 1);
-       //glTranslated(2.0,0.0,0.0);
+       glPushMatrix();
+       glTranslated(0.0, 0.2, 0.0);
+       glTranslated(0.0,0.0,2.0);
+       glRotated((double)180*theta/M_PI, 1, 0, 0);
+       glTranslated(0.0,0.0,-2.0);
        glColor3f (0.0,0.0,1.0);
        gluSphere(gluNewQuadric(),
             (GLdouble) 0.3,
             (GLint)    10,
             (GLint)    10 );
-     glPopMatrix();
+       glPopMatrix();
 
 }
 
@@ -32,7 +32,7 @@ void drawStand()
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-//draw stand on top of base //move further back 
+        //draw stand on top of base
 	glPushMatrix();
 	glTranslated(0.0, 2.0, 0.0);
 	glTranslated(0.0, 0.0, -2.0);
@@ -46,8 +46,7 @@ void drawStand()
 	
 	//draw arm
 	glPushMatrix();
-	glTranslated(0.0, 2.2, 0.0);
-	glTranslated(0.0, 0.0, 2.7);
+	glTranslated(0.0, 2.2, 2.7);
 	glRotated(90.0, 1.0, 0.0, 0.0);
 	glColor3f(1.0, 1.0, 0.0);
 	gluCylinder(gluNewQuadric(), 
@@ -58,17 +57,17 @@ void drawStand()
 	glPopMatrix();
 
 
-	
+	//draw string
 	glPushMatrix();
-        //glTranslated(0.0, 0.0, 0.0);
-       // glTranslated(0.0, 0.0, 2.3);
-       // glRotated((double)180*theta/M_PI,1.0, 0.0, 0.0);
-       // glTranslated(0.0, 0.0, -2.3);
+	glTranslated(0.0, 0.2, 0.0);
+        glTranslated(0.0, 0.0, 2.0);
+        glRotated((double)180*theta/M_PI,1.0, 0.0, 0.0);
+        glTranslated(0.0, 0.0, -2.0);
         glColor3f(1.0, 0.0, 1.0);
         gluCylinder(gluNewQuadric(),
                 (GLdouble) 0.1,
                 (GLdouble) 0.1,
-                (GLdouble) 2.5,
+                (GLdouble) 2.8,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
 
