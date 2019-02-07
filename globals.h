@@ -9,3 +9,4 @@ extern double omega;
 extern double t;
 extern float fps;
 extern double period;
+extern double prevOmega;

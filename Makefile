@@ -6,7 +6,7 @@
 CXX = g++
 LDLIBS = -lglut -lGL -lGLU -lm
 HEADERS = openGl.h globals.h constants.h prototypes.h
-OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o periodCalc.o
+OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o periodCalc.o sleepFunc.o
 
 debug ?= n
 ifeq ($(debug), y)
@@ -50,6 +50,8 @@ keyboard.o : keyboard.cpp $(HEADERS)
 periodCalc.o : periodCalc.cpp $(HEADERS)
 	$(CXX) $(CFLAGS) periodCalc.cpp -c
 
+sleepFunc.o : sleepFunc.cpp $(HEADERS)
+	$(CXX) $(CFLAGS) sleepFunc.cpp -c
 clean:
 	rm *.o
 

@@ -6,7 +6,12 @@
 
 void findPeriod()
 {
-
+	if((prevOmega+omega) >= 0)
+	{
+		std::cout << "positive" << std::endl;
+	}
+	else
+		std::cout<< "negative" << std::endl;
 }
 
 void drawPeriod()

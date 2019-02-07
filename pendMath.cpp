@@ -1,4 +1,4 @@
-
+#include "prototypes.h"
 #include "globals.h"
 #include <stdio.h>
 #include <math.h>
@@ -19,11 +19,11 @@ double omegadot(double t, double theta, double omega)
 
    double num, denom, pnum;
 
- //  pnum=R/g;
+   pnum=R/g;
    num = -b*omega + A*cos(k*t);
    denom = m*R*R;
 
-   //period = (double)((2.0*M_PI)*sqrt(pnum));
+   period = (double)((2.0*M_PI)*sqrt(pnum));
  //return -g/R*theta;
 
 
@@ -32,7 +32,7 @@ double omegadot(double t, double theta, double omega)
 
  
 
-void step(double *t, double *theta, double *omega )
+void step(double *t, double *theta, double *omega, double *prevOmega )
 {
    double dt, h;
    double k1, k2, k3, k4, j1, j2, j3, j4;
@@ -47,7 +47,10 @@ void step(double *t, double *theta, double *omega )
     k4 = thetadot(*t+h, *theta+h*k3, *omega+h*j3);
     j4 = omegadot(*t+h, *theta+h*k3, *omega+h*j3);
     *theta = *theta + h/6*(k1+2*k2+2*k3+k4);
+    *prevOmega=*omega;
     *omega = *omega + h/6*(j1+2*j2+2*j3+j4);
     *t = *t + h;
+	
+ //    findPeriod();
 }
 
