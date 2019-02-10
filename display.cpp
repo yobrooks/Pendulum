@@ -19,9 +19,9 @@ void display()
     drawSphere();
     drawStand();
     drawScale();
-
     drawFPS();
+    drawFPP();
     drawPeriod();
-    glutSleep(10);   
+    //glutSleep(10);   
     glutSwapBuffers();
 }

@@ -18,4 +18,5 @@ void drawFPS();
 void drawScale();
 void drawPeriod();
 void glutSleep(int );
-
+void findFPP();
+void drawFPP();
