@@ -50,6 +50,6 @@ void step(double *t, double *theta, double *omega, double *prevOmega )
     *omega = *omega + h/6*(j1+2*j2+2*j3+j4);
     *t = *t + h;
 	
-     findPeriod();
+ //    findPeriod();
 }
 

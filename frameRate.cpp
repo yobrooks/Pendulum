@@ -20,7 +20,7 @@ void findPeriod()
 		{
 			timeCount=t;
 		}
-		else if(pStart==true && pStart==true)
+		else if(pStart==true && pEnd==true)
 		{
 			pStart=false;
 			pEnd=false;
@@ -49,13 +49,13 @@ void findFPP()
                 {
                   	totFrame++;
                 }
-                else if(fpStart==true && fpStart==true)
+                else if(fpStart==true && fpEnd==true)
                 {
                         fpStart=false;
                         fpEnd=false;
-                        fpp=totFrame;
-			std::cout<< fpp << std::endl;
-                      //  totFrame=0;
+                        fpp=totFrame*2;
+			std::cout<< totFrame << std::endl;
+                        totFrame=0;
                 }
         }
 
@@ -94,6 +94,7 @@ void drawString(int x, int y, void *font, const char *string)
 
 void drawPeriod()
 {
+	findPeriod();
  //	std::cout << omega*prevOmega << std::endl;
         char *charString = (char*) malloc(12*sizeof(char));
         sprintf(charString, "Period: %.1f sec", period);
@@ -122,9 +123,11 @@ void drawFPS()
 {
 
 	findFPS();
-
+//	findFPP();
 	char *charString = (char*) malloc(12*sizeof(char));
+//	char *charStringA = (char*) malloc(12*sizeof(char));
 	sprintf(charString, "FPS: %.0f", fps);
+//	sprintf(charStringA, "FPP: %.0f", totFrame);
 	glMatrixMode(GL_PROJECTION);
 	glPushMatrix();
 	glLoadIdentity();
@@ -136,6 +139,8 @@ void drawFPS()
 
 	glColor3f(255, 255, 255);
 	drawString(50, 100, GLUT_BITMAP_HELVETICA_12, charString);
+//	drawString(50, 50, GLUT_BITMAP_HELVETICA_12, charStringA);
+
 
 	glPopMatrix();
 	glMatrixMode(GL_PROJECTION);
@@ -143,14 +148,15 @@ void drawFPS()
 	glMatrixMode(GL_MODELVIEW);
 
 	free(charString);
+//	free(charStringA);
 }
-
+//make into one function
 void drawFPP()
 {
 	findFPP();
 
-        char *charString = (char*) malloc(12*sizeof(char));
-        sprintf(charString, "FPP: %.0f", fpp);
+        char *charStringa = (char*) malloc(12*sizeof(char));
+        sprintf(charStringa, "FPP: %.0f", (float)fpp);
         glMatrixMode(GL_PROJECTION);
         glPushMatrix();
         glLoadIdentity();
@@ -161,13 +167,13 @@ void drawFPP()
         glLoadIdentity();
 
         glColor3f(255, 255, 255);
-        drawString(50, 50, GLUT_BITMAP_HELVETICA_12, charString);
+        drawString(50, 50, GLUT_BITMAP_HELVETICA_12, charStringa);
 
         glPopMatrix();
         glMatrixMode(GL_PROJECTION);
         glPopMatrix();
         glMatrixMode(GL_MODELVIEW);
 
-        free(charString);
+        free(charStringa);
 
 }
