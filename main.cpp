@@ -5,9 +5,9 @@
 
 int main(int argc, char** argv)
 {
-    askSynch(argc, argv);
+    askSynch(argc, argv); //figure out if synchonization needed based on command line argument
     glutInit(&argc, argv);
-    glutInitDisplayMode ( GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH ); //change to double
+    glutInitDisplayMode ( GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH ); 
     glutInitWindowSize (WINDOW_HEIGHT, WINDOW_HEIGHT);
     glutInitWindowPosition (VIEWPORT_POS, VIEWPORT_POS);
     glutCreateWindow (argv[0]);

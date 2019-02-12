@@ -4,13 +4,12 @@
 #include <stdio.h>
 #include <math.h>
 
+//idle func to run the physics engine
+//code given by Dr. Pounds
 void run()
 {
 
-  // for (long i=0; i<2*Nstep; i++ ) {
-     // printf("%f %f %f\n", t, theta, omega);
-      step( &t, &theta, &omega, &prevOmega);
-  // }
+  step( &t, &theta, &omega, &prevOmega);
 
    glutPostRedisplay();
 }

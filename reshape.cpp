@@ -1,6 +1,6 @@
 
 #include "openGl.h"
-
+//reshape function given by Dr. Pounds
 void reshape (int w, int h)
 {
    glViewport (0, 0, (GLsizei) w, (GLsizei) h);

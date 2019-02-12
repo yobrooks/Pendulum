@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <math.h>
 
+//functions for the phsyics engine
+//all functions provided by Dr. Pounds
+
+int Nstep = 1000000;
+
 double thetadot(double t, double theta, double omega)
 {
    return omega;
@@ -17,14 +22,10 @@ double omegadot(double t, double theta, double omega)
    static double A = 0.00;  // Amplitude of initial driving force
    static double k = 0.00;  // Frequency parameter of initial driving force
 
-   double num, denom;// pnum;
+   double num, denom;
 
-   //pnum=R/g;
    num = -b*omega + A*cos(k*t);
    denom = m*R*R;
-
-   //period = (double)((2.0*M_PI)*sqrt(pnum));
-   //return -g/R*theta;
 
  return (-g/R*sin(theta)+num)/denom;
 }
@@ -46,10 +47,8 @@ void step(double *t, double *theta, double *omega, double *prevOmega )
     k4 = thetadot(*t+h, *theta+h*k3, *omega+h*j3);
     j4 = omegadot(*t+h, *theta+h*k3, *omega+h*j3);
     *theta = *theta + h/6*(k1+2*k2+2*k3+k4);
-    *prevOmega=*omega;
+    *prevOmega=*omega; //sets previous omega before omega is updated
     *omega = *omega + h/6*(j1+2*j2+2*j3+j4);
     *t = *t + h;
-	
- //    findPeriod();
 }
 

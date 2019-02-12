@@ -16,12 +16,12 @@ void display()
     glColor3f(0.0,1.0,0.0);
   
 
+    //drawing everything on the screen
     drawSphere();
     drawStand();
     drawScale();
-    drawFPS();
-    drawFPP();
     drawPeriod();
+    //determines if synch needs to be applied
     if(desiredFR>0.0)
     {
 	glutLockFrameRate();
