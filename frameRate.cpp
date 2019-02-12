@@ -54,7 +54,7 @@ void findFPP()
                         fpStart=false;
                         fpEnd=false;
                         fpp=totFrame*2;
-			std::cout<< totFrame << std::endl;
+//			std::cout<< totFrame << std::endl;
                         totFrame=0;
                 }
         }

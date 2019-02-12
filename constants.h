@@ -12,3 +12,4 @@ float fps = (float) 0.0;
 double period=0;
 double prevOmega = 0;
 long int fpp=0;
+float desiredFR;

@@ -2,7 +2,7 @@
 #include "prototypes.h"
 #include "globals.h"
 #include <math.h>
-
+#include <iostream>
 void display()
 {
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
@@ -22,6 +22,9 @@ void display()
     drawFPS();
     drawFPP();
     drawPeriod();
-    //glutSleep(10);   
+    if(desiredFR>0.0)
+    {
+	glutLockFrameRate();
+    }
     glutSwapBuffers();
 }
