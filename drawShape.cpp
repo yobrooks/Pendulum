@@ -5,7 +5,7 @@
 #include <iostream>
 
 
-
+//draw the pendulum ball
 void drawSphere()
 {
        glPushMatrix();
@@ -22,6 +22,7 @@ void drawSphere()
 
 }
 
+//draw the stand that the pendulum ball is attached to 
 void drawStand()
 {
 	//draw base
@@ -60,7 +61,7 @@ void drawStand()
 	//draw string
 	glPushMatrix();
 	glTranslated(0.0, 0.2, 0.0);
-        glTranslated(0.0, 0.0, 2.0);
+        glTranslated(0.0, 0.0, 2.0); //swings with the ball
         glRotated((double)180*theta/M_PI,1.0, 0.0, 0.0);
         glTranslated(0.0, 0.0, -2.0);
         glColor3f(1.0, 0.0, 1.0);
@@ -73,6 +74,7 @@ void drawStand()
 
 }
 
+//draw scale factor
 void drawScale()
 {
 	glColor3f(0.0, 1.0, 1.0);
