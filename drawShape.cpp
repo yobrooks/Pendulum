@@ -9,10 +9,10 @@
 void drawSphere()
 {
        glPushMatrix();
-       glTranslated(0.0, 0.2, 0.0);
-       glTranslated(0.0,0.0,2.0);
-       glRotated((double)180*theta/M_PI, 1, 0, 0);
-       glTranslated(0.0,0.0,-2.0);
+       glTranslated(0.0, -0.3, 0.0);
+       //glTranslated(0.0,0.0,2.0);
+       //glRotated((double)180*theta/M_PI, 1, 0, 0);
+       //glTranslated(0.0,0.0,-2.0);
        glColor3f (0.0,0.0,1.0);
        gluSphere(gluNewQuadric(),
             (GLdouble) 0.3,
@@ -60,14 +60,14 @@ void drawStand()
 
 	//draw string
 	glPushMatrix();
-	glTranslated(0.0, 0.2, 0.0);
+	glTranslated(0.0, -0.3, 0.0);
         glTranslated(0.0, 0.0, 2.0); //swings with the ball
-        glRotated((double)180*theta/M_PI,1.0, 0.0, 0.0);
+        glRotated((double)180*theta/M_PI,1, 0, 0);
         glTranslated(0.0, 0.0, -2.0);
         glColor3f(1.0, 0.0, 1.0);
         gluCylinder(gluNewQuadric(),
-                (GLdouble) 0.1,
-                (GLdouble) 0.1,
+                (GLdouble) 0.05,
+                (GLdouble) 0.05,
                 (GLdouble) 2.8,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
