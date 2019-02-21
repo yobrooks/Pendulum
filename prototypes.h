@@ -17,3 +17,5 @@ void drawScale();
 void drawPeriod();
 void glutLockFrameRate();
 void askSynch(int, char**);
+void drawTable();
+void drawLeg();
