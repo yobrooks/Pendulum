@@ -30,3 +30,62 @@ void drawTable()
 	
 	
 }
+
+void defineWalls()
+{
+	//ceiling?
+	glColor3f(0.0, 0.0, 1.0);
+	glBegin(GL_POLYGON);
+		glVertex3d(-5.0, -5.0, 2.0);
+		glVertex3d(-5.0, 5.0, 2.0);
+		glVertex3d(5.0, 5.0, 2.0);
+		glVertex3d(5.0, -5.0, 2.0);
+	glEnd();	
+
+	//floor?
+	glColor3f(0.0, 1.0, 0.0);
+	glBegin(GL_POLYGON);
+		glVertex3d(-5.0, -5.0, -2.0);
+		glVertex3d(-5.0, 5.0, -2.0);
+		glVertex3d(5.0, 5.0, -2.0);
+		glVertex3d(5.0,-5.0, -2.0);
+	glEnd();
+	
+	//front face
+	glColor3f(1.0, 0.0, 0.0);
+	glBegin(GL_POLYGON);
+		glVertex3d(5.0, -5.0, 2.0);
+		glVertex3d(5.0, 5.0, 2.0);
+		glVertex3d(5.0, 5.0, -2.0);
+		glVertex3d(5.0, -5.0, -2.0);
+	glEnd();
+
+	//back side?
+	glColor3f(1.0, 1.0, 0.0);
+        glBegin(GL_POLYGON);
+                glVertex3d(-5.0, -5.0, -2.0);
+                glVertex3d(-5.0, 5.0, -2.0);
+                glVertex3d(-5.0, 5.0, 2.0);
+                glVertex3d(-5.0, -5.0, 2.0);
+        glEnd();
+
+	//right side
+	glColor3f(1.0, 0.0, 1.0);
+        glBegin(GL_POLYGON);
+                glVertex3d(-5.0, 5.0, 2.0);
+                glVertex3d(-5.0, 5.0, -2.0);
+                glVertex3d(5.0, 5.0, -2.0);
+                glVertex3d(5.0, 5.0, 2.0);
+        glEnd();
+
+	//left side
+	glColor3f(0.0, 1.0, 1.0);
+        glBegin(GL_POLYGON);
+                glVertex3d(-5.0, -5.0, -2.0);
+                glVertex3d(-5.0, -5.0, 2.0);
+                glVertex3d(5.0, -5.0, 2.0);
+                glVertex3d(5.0, -5.0, -2.0);
+        glEnd();
+
+
+}

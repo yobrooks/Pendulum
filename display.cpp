@@ -7,8 +7,8 @@ void display()
 {
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     glLoadIdentity();
-//    gluLookAt( 20.0,   -10.0, 10.0,  // Eye
-      gluLookAt(20.0, 0.0, 5.0,
+   // gluLookAt( 20.0,   -10.0, 10.0,  // Eye
+      gluLookAt(-20.0, 0.0, 5.0,
                 0.0,   0.0, 0.0,  // Center
                 0.0,   0.0, 1.0); // Up
 
@@ -18,11 +18,12 @@ void display()
   
 
     //drawing everything on the screen; make a separate function for this junk
-    drawSphere();
-    drawStand();
-    drawTable();
+   // drawSphere();
+    //drawStand();
+    //drawTable();
     //drawScale();
-    drawPeriod();
+    //drawPeriod();
+    defineWalls();
     //determines if synch needs to be applied
     if(desiredFR>0.0)
     {
