@@ -20,3 +20,4 @@ void askSynch(int, char**);
 void drawTable();
 void drawLeg();
 void defineWalls();
+void specialKeyboard(int,  int, int);
