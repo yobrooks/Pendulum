@@ -13,21 +13,23 @@ void drawSphere()
        glTranslated(0.0,0.0,2.7);
        glRotated((double)180*theta/M_PI, 0, 1, 0);
        glTranslated(0.0,0.0,-2.7);
-       glColor3f (0.0,0.0,1.0);
+       glColor3f (1.0,1.0,1.0);
        gluSphere(gluNewQuadric(),
             (GLdouble) 0.3,
             (GLint)    10,
             (GLint)    10 );
        glPopMatrix();
 
+
 }
 
 //draw the stand that the pendulum ball is attached to 
 void drawStand()
 {
+	
 	//draw base
 	glPushMatrix();
-	glColor3f(0.0, 1.0, 0.0);
+	glColor3f(1.0, 1.0, 1.0);
 	glScaled(5.0, 5.0, 0.5);
 	glTranslated(0.0, 0.0, -4.5);
 	glutSolidCube(1.0);
@@ -37,7 +39,7 @@ void drawStand()
 	glPushMatrix();
 	glTranslated(0.0, 2.0, 0.0);
 	glTranslated(0.0, 0.0, -2.0);
-	glColor3f(1.0, 0.0, 0.0);
+	glColor3f(1.0, 1.0, 1.0);
 	gluCylinder(gluNewQuadric(),
 		(GLdouble) 0.2,
 		(GLdouble) 0.2,
@@ -49,7 +51,7 @@ void drawStand()
 	glPushMatrix();
 	glTranslated(0.0, 2.2, 2.7);
 	glRotated(90.0, 1.0, 0.0, 0.0);
-	glColor3f(1.0, 1.0, 0.0);
+	glColor3f(1.0, 1.0, 1.0);
 	gluCylinder(gluNewQuadric(), 
 		(GLdouble) 0.2,
 		(GLdouble) 0.2,
@@ -64,13 +66,14 @@ void drawStand()
         glTranslated(0.0, 0.0, 2.7); //swings with the ball
         glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
         glTranslated(0.0, 0.0, -2.7);
-        glColor3f(1.0, 0.0, 1.0);
+        glColor3f(1.0, 1.0, 1.0);
         gluCylinder(gluNewQuadric(),
                 (GLdouble) 0.05,
                 (GLdouble) 0.05,
                 (GLdouble) 2.8,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
+
 
 }
 
