@@ -28,12 +28,12 @@ void display()
 
     //drawing everything on the screen; make a separate function for this junk
    // drawSphere();
-    //drawStand();
-    //drawTable();
     //drawScale();
     //drawPeriod();
     defineWalls();
     drawTable();
+    drawStand();
+    drawSphere();
     //determines if synch needs to be applied
     if(desiredFR>0.0)
     {

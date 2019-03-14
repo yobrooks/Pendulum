@@ -9,7 +9,7 @@
 void run()
 {
 
-  //step( &t, &theta, &omega, &prevOmega);
+  step( &t, &theta, &omega, &prevOmega);
 
    glutPostRedisplay();
 }

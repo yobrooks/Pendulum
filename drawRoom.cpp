@@ -14,8 +14,8 @@ void drawTable()
 {
 	//draw base of table
 	glPushMatrix();
-	glScalef(1.3, 2.0, .2);
-	glTranslatef(-2.1, -0.4, -4.0);
+	glScalef(1.3, 3.0, .2);
+	glTranslatef(-2.1, -0.25, -4.0);
 	glColor3f(0.3, 0.2, 0.0);
 	glutSolidCube(1.0);
 	glPopMatrix();
