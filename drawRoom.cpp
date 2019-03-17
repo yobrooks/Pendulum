@@ -7,7 +7,7 @@ void drawLeg()
 {
 	glColor3f(0.3, 0.2, 0.0);
 	glScalef(0.5, 0.5, 3.0);
-	glutSolidCube(1.0);
+	glutWireCube(1.0);
 }
 
 void drawTable()
@@ -17,7 +17,7 @@ void drawTable()
 	glScalef(5.0, 10.0, 1.0);
 	glTranslatef(-0.5, 0.0, -3.5);
 	glColor3f(0.3, 0.2, 0.0);
-	glutSolidCube(1.0);
+	glutWireCube(1.0);
 	glPopMatrix();
 
 

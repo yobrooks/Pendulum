@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CAM_A	constants.h	/^float CAM_A = 15.0, CAM_B = 45.0, CAM_C = 45.0;$/;"	v
+CAM_B	constants.h	/^float CAM_A = 15.0, CAM_B = 45.0, CAM_C = 45.0;$/;"	v
+CAM_C	constants.h	/^float CAM_A = 15.0, CAM_B = 45.0, CAM_C = 45.0;$/;"	v
+CENTER_X	constants.h	/^float CENTER_X = 0.0, CENTER_Y = 0.0, CENTER_Z = 0.0;$/;"	v
+CENTER_Y	constants.h	/^float CENTER_X = 0.0, CENTER_Y = 0.0, CENTER_Z = 0.0;$/;"	v
+CENTER_Z	constants.h	/^float CENTER_X = 0.0, CENTER_Y = 0.0, CENTER_Z = 0.0;$/;"	v
+Nstep	pendMath.cpp	/^int Nstep = 1000000;$/;"	v
+VIEWPORT_POS	constants.h	/^const int VIEWPORT_POS = 100;$/;"	v
+WINDOW_HEIGHT	constants.h	/^const int WINDOW_HEIGHT = 500;$/;"	v
+askSynch	sleepFunc.cpp	/^void askSynch(int num, char** args)$/;"	f
+defineWalls	drawRoom.cpp	/^void defineWalls()$/;"	f
+desiredFR	constants.h	/^float desiredFR;$/;"	v
+display	display.cpp	/^void display()$/;"	f
+drawExtras	drawRoom.cpp	/^void drawExtras()$/;"	f
+drawLeg	drawRoom.cpp	/^void drawLeg()$/;"	f
+drawPeriod	frameRate.cpp	/^void drawPeriod()$/;"	f
+drawScale	drawShape.cpp	/^void drawScale()$/;"	f
+drawSphere	drawShape.cpp	/^void drawSphere()$/;"	f
+drawStand	drawShape.cpp	/^void drawStand()$/;"	f
+drawString	frameRate.cpp	/^void drawString(int x, int y, void *font, const char *string)$/;"	f
+drawTable	drawRoom.cpp	/^void drawTable()$/;"	f
+findFPS	frameRate.cpp	/^void findFPS()$/;"	f
+findPeriod	frameRate.cpp	/^void findPeriod()$/;"	f
+fpEnd	frameRate.cpp	/^static bool pStart=false, pEnd=false, fpStart=false, fpEnd=false;$/;"	v	file:
+fpStart	frameRate.cpp	/^static bool pStart=false, pEnd=false, fpStart=false, fpEnd=false;$/;"	v	file:
+fpp	constants.h	/^long int fpp=0;$/;"	v
+fps	constants.h	/^float fps = (float) 0.0;$/;"	v
+frame	constants.h	/^int frame = 0;$/;"	v
+glutLockFrameRate	sleepFunc.cpp	/^void glutLockFrameRate()$/;"	f
+init	init.cpp	/^void init(void)$/;"	f
+keyboard	keyboard.cpp	/^void keyboard(unsigned char key, int x, int y)$/;"	f
+main	main.cpp	/^int main(int argc, char** argv)$/;"	f
+oldTime	constants.h	/^int oldTime = 0;$/;"	v
+omega	constants.h	/^double omega = 0.0;$/;"	v
+omegadot	pendMath.cpp	/^double omegadot(double t, double theta, double omega)$/;"	f
+pEnd	frameRate.cpp	/^static bool pStart=false, pEnd=false, fpStart=false, fpEnd=false;$/;"	v	file:
+pStart	frameRate.cpp	/^static bool pStart=false, pEnd=false, fpStart=false, fpEnd=false;$/;"	v	file:
+period	constants.h	/^double period=0;$/;"	v
+prevOmega	constants.h	/^double prevOmega = 0;$/;"	v
+prevTimeCount	frameRate.cpp	/^static double timeCount=0.0, prevTimeCount=0.0;$/;"	v	file:
+reshape	reshape.cpp	/^void reshape (int w, int h)$/;"	f
+run	runPhys.cpp	/^void run()$/;"	f
+specialKeyboard	specialKeys.cpp	/^void specialKeyboard(int key, int x, int y)$/;"	f
+step	pendMath.cpp	/^void step(double *t, double *theta, double *omega, double *prevOmega )$/;"	f
+t	constants.h	/^double t = 0.0;$/;"	v
+theta	constants.h	/^double theta = M_PI\/4.0;$/;"	v
+thetadot	pendMath.cpp	/^double thetadot(double t, double theta, double omega)$/;"	f
+timeCount	frameRate.cpp	/^static double timeCount=0.0, prevTimeCount=0.0;$/;"	v	file:
+totFrame	frameRate.cpp	/^static long int totFrame=0;$/;"	v	file:

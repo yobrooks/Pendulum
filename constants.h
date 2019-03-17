@@ -1,5 +1,6 @@
 //global variables initial assignment
 
+#include "Camera.h"
 #include <math.h>
 
 //int Nstep = 1000000;
@@ -15,6 +16,6 @@ double period=0;
 double prevOmega = 0;
 long int fpp=0;
 float desiredFR;
-float CAM_A = 15.0, CAM_B = 45.0, CAM_C = 45.0;
+float EYE_X = 15.0, EYE_Y =  0.0, EYE_Z = 0.0;
 float CENTER_X = 0.0, CENTER_Y = 0.0, CENTER_Z = 0.0;
 

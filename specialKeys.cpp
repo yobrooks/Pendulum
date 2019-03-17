@@ -1,10 +1,10 @@
 #include "openGl.h"
 #include "globals.h"
+#include "Camera.h"
 #include <iostream>
-
 void specialKeyboard(int key, int x, int y)
 {
-	if(key == GLUT_KEY_PAGE_UP)
+	/*if(key == GLUT_KEY_PAGE_UP)
 	{
 		CAM_A = CAM_A - 0.1;
 		
@@ -59,5 +59,5 @@ void specialKeyboard(int key, int x, int y)
         }
 
 
-	glutPostRedisplay();
+	glutPostRedisplay();*/
 }

@@ -5,8 +5,8 @@
 
 CXX = g++
 LDLIBS = -lglut -lGL -lGLU -lm
-HEADERS = openGl.h globals.h constants.h prototypes.h
-OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o sleepFunc.o drawRoom.o specialKeys.o
+HEADERS = openGl.h globals.h constants.h prototypes.h Camera.h
+OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o sleepFunc.o drawRoom.o specialKeys.o Camera.o
 
 debug ?= n
 ifeq ($(debug), y)
@@ -55,6 +55,9 @@ drawRoom.o : drawRoom.cpp $(HEADERS)
 
 specialKeys.o : specialKeys.cpp $(HEADERS)
 	$(CXX) $(CFLAGS) specialKeys.cpp -c
+
+Camera.o : Camera.cpp $(HEADERS)
+	$(CXX) $(CFLAGS) Camera.cpp -c
 
 clean:
 	rm *.o

@@ -1,6 +1,8 @@
 #include "openGl.h"
 #include <iostream>
 #include "globals.h"
+#include "Camera.h"
+
 //function to allow user to quit the program with the keyboard
 void keyboard(unsigned char key, int x, int y)
 {

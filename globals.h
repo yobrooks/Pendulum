@@ -11,5 +11,5 @@ extern double period;
 extern double prevOmega;
 extern long int fpp;
 extern float desiredFR;
-extern float CAM_A, CAM_B, CAM_C;
+extern float EYE_X, EYE_Y, EYE_Z;
 extern float CENTER_X, CENTER_Y, CENTER_Z;

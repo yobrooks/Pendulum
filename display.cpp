@@ -1,6 +1,7 @@
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
+#include "Camera.h"
 #include <math.h>
 #include <iostream>
 
@@ -17,8 +18,8 @@ void display()
                 CENTER_X,   CENTER_Y, CENTER_Z,  // Center
                 0.0,   0.0, 1.0); // Up*/
 
-      gluLookAt(15.0, 10.0, 0.0,
-		0.0, 0.0, 0.0,
+      gluLookAt(EYE_X, EYE_Y, EYE_Z,
+		CENTER_X, CENTER_Y, CENTER_Z,
 		0.0, 0.0, 1.0);
 
     glEnable(GL_DEPTH_TEST);
