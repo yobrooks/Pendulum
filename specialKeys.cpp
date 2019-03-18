@@ -2,6 +2,8 @@
 #include "globals.h"
 #include "Camera.h"
 #include <iostream>
+
+
 void specialKeyboard(int key, int x, int y)
 {
 	/*if(key == GLUT_KEY_PAGE_UP)
@@ -58,6 +60,5 @@ void specialKeyboard(int key, int x, int y)
                 }
         }
 
-
-	glutPostRedisplay();*/
+	glutPostRedisplay();
 }

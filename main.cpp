@@ -11,7 +11,8 @@ int main(int argc, char** argv)
     glutInitWindowSize (WINDOW_HEIGHT, WINDOW_HEIGHT);
     glutInitWindowPosition (VIEWPORT_POS, VIEWPORT_POS);
     glutCreateWindow (argv[0]);
-    init ();
+    glewInit();
+    //init ();
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
     glutIdleFunc(run);

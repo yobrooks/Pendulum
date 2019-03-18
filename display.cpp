@@ -22,11 +22,11 @@ void display()
 		CENTER_X, CENTER_Y, CENTER_Z,
 		0.0, 0.0, 1.0);
 
+    glEnable(GL_TEXTURE_2D);
     glEnable(GL_DEPTH_TEST);
-
-    glColor3f(0.0,1.0,0.0);
   
 
+    //bind();
     //drawing everything on the screen; make a separate function for this junk
    // drawSphere();
     //drawScale();
@@ -36,9 +36,13 @@ void display()
     defineWalls();
     drawTable();
     //determines if synch needs to be applied
-    if(desiredFR>0.0)
+ /*   if(desiredFR>0.0)
     {
 	glutLockFrameRate();
-    }
+    }*/
     glutSwapBuffers();
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_DEPTH_TEST);
+
+    
 }
