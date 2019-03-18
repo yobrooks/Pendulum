@@ -4,9 +4,9 @@
 #Pendulum POC Makefile
 
 CXX = g++
-LDLIBS = -lglut -lGL -lGLU -lm
-HEADERS = openGl.h globals.h constants.h prototypes.h Camera.h
-OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o sleepFunc.o drawRoom.o specialKeys.o Camera.o
+LDLIBS = -lglut -lGL -lGLU -lGLEW libSOIL.a -lm
+HEADERS = openGl.h globals.h constants.h prototypes.h Camera.h Texture.h
+OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o sleepFunc.o drawRoom.o specialKeys.o Camera.o Texture.o
 
 debug ?= n
 ifeq ($(debug), y)
@@ -58,6 +58,9 @@ specialKeys.o : specialKeys.cpp $(HEADERS)
 
 Camera.o : Camera.cpp $(HEADERS)
 	$(CXX) $(CFLAGS) Camera.cpp -c
+
+Texture.o : Texture.cpp $(HEADERS)
+	$(CXX) $(CFLAGS) Texture.cpp -c
 
 clean:
 	rm *.o

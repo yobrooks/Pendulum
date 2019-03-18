@@ -4,7 +4,7 @@
 #include "Camera.h"
 #include <math.h>
 #include <iostream>
-
+#include "Texture.h"
 
 
 void display()
@@ -22,6 +22,11 @@ void display()
 		CENTER_X, CENTER_Y, CENTER_Z,
 		0.0, 0.0, 1.0);
 
+/*	gluLookAt(-10.0, 0.0, 0.0,
+                0.0, 0.0, 0,
+                0.0, 0.0, 1.0);*/
+
+
     glEnable(GL_TEXTURE_2D);
     glEnable(GL_DEPTH_TEST);
   
@@ -31,16 +36,28 @@ void display()
    // drawSphere();
     //drawScale();
     //drawPeriod();
-    drawStand();
-    drawSphere();
+   // drawStand();
+   // drawSphere();
     defineWalls();
-    drawTable();
+   // drawTable();
+   //
+ /*  Texture tex2("./textures/studio54.jpg");
+   glBegin(GL_POLYGON);
+
+      glTexCoord2d( 0.0, 0.0);   glVertex2d(  0.0,  0.0);
+      glTexCoord2d( 0.0, 1.0);   glVertex2d(  0.0, 10.0);
+      glTexCoord2d( 1.0, 1.0);   glVertex2d( 10.0, 10.0);
+      glTexCoord2d( 1.0, 0.0);   glVertex2d( 10.0,  0.0 );
+
+    glEnd();
     //determines if synch needs to be applied
- /*   if(desiredFR>0.0)
+    if(desiredFR>0.0)
     {
 	glutLockFrameRate();
     }*/
     glutSwapBuffers();
+ //
+    //glFlush();
     glDisable(GL_TEXTURE_2D);
     glDisable(GL_DEPTH_TEST);
 

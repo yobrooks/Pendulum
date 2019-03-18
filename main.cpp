@@ -13,6 +13,9 @@ int main(int argc, char** argv)
     glutCreateWindow (argv[0]);
     glewInit();
     //init ();
+    glClearColor(0.0,0.0,0.0,0.0);
+    glLoadIdentity();
+    glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
     glutIdleFunc(run);

@@ -2,6 +2,7 @@
 #include "prototypes.h"
 #include "globals.h"
 #include <iostream>
+#include "Texture.h"
 
 void drawLeg()
 {
@@ -50,57 +51,65 @@ void drawTable()
 void defineWalls()
 {
 	//ceiling?
-	glColor3f(0.0, 0.0, 1.0);
+	Texture tex1("./textures/wall 4.jpg");
+//	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
-		glVertex3d(-15.0, -15.0, 4.0);
-		glVertex3d(-15.0, 15.0, 4.0);
-		glVertex3d(15.0, 15.0, 4.0);
-		glVertex3d(15.0, -15.0, 4.0);
+		glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, 4.0);
+		glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, 4.0);
+		glTexCoord2d(1.0, 1.0); glVertex3d(15.0, 15.0, 4.0);
+		glTexCoord2d(0.0, 1.0); glVertex3d(15.0, -15.0, 4.0);
 	glEnd();	
 
 	//floor?
-	glColor3f(0.0, 1.0, 0.0);
+//	glColor3f(0.0, 1.0, 0.0);
+	Texture tex2("./textures/floor1.jpg");
 	glBegin(GL_POLYGON);
-		glVertex3d(-15.0, -15.0, -6.0);
-		glVertex3d(-15.0, 15.0,-6.0);
-		glVertex3d(15.0, 15.0, -6.0);
-		glVertex3d(15.0,-15.0, -6.0);
+                glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, -6.0);
+                glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, -6.0);
+                glTexCoord2d(1.0, 1.0); glVertex3d(15.0,  15.0, -6.0);
+                glTexCoord2d(0.0, 1.0); glVertex3d(15.0, -15.0, -6.0);
 	glEnd();
 	
 	//front face
-	glColor3f(1.0, 0.0, 0.0);
+	//glColor3f(1.0, 0.0, 0.0);
+	Texture tex3("./textures/wall 3.jpg");
 	glBegin(GL_POLYGON);
-		glVertex3d(15.0, -15.0, 4.0);
-		glVertex3d(15.0, 15.0, 4.0);
-		glVertex3d(15.0, 15.0, -6.0);
-		glVertex3d(15.0, -15.0, -6.0);
+		glTexCoord2d(0.0, 0.0); glVertex3d(15.0, -15.0, 4.0);
+		glTexCoord2d(1.0, 0.0); glVertex3d(15.0, 15.0, 4.0);
+		glTexCoord2d(1.0, 1.0); glVertex3d(15.0, 15.0, -6.0);
+		glTexCoord2d(0.0, 1.0); glVertex3d(15.0, -15.0, -6.0);
 	glEnd();
 
 	//back side?
-	glColor3f(1.0, 1.0, 0.0);
+	//glColor3f(1.0, 1.0, 0.0);
+	Texture tex4("./textures/wall 2.jpg");
         glBegin(GL_POLYGON);
-                glVertex3d(-15.0, -15.0, -6.0);
-                glVertex3d(-15.0, 15.0, -6.0);
-                glVertex3d(-15.0, 15.0, 4.0);
-                glVertex3d(-15.0, -15.0, 4.0);
+            		glTexCoord2d(0.0, 0.0);	   glVertex3d(-15.0, -15.0, -6.0);
+                	glTexCoord2d(0.0, 1.0);    glVertex3d(-15.0, 15.0, -6.0);
+                	glTexCoord2d(1.0, 1.0);	   glVertex3d(-15.0, 15.0, 4.0);
+                	glTexCoord2d(0.0, 1.0);    glVertex3d(-15.0, -15.0, 4.0);
         glEnd();
 
+	
+
 	//right side
-	glColor3f(1.0, 0.0, 1.0);
+//	glColor3f(1.0, 0.0, 1.0);
+	Texture tex5("./textures/wall 3.jpg");
         glBegin(GL_POLYGON);
-                glVertex3d(-15.0, 15.0, 4.0);
-                glVertex3d(-15.0, 15.0, -6.0);
-                glVertex3d(15.0, 15.0, -6.0);
-                glVertex3d(15.0, 15.0, 4.0);
+               glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, 15.0, 4.0);
+               glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, -6.0);
+               glTexCoord2d(1.0, 1.0); glVertex3d(15.0, 15.0, -6.0);
+               glTexCoord2d(0.0, 1.0); glVertex3d(15.0, 15.0, 4.0);
         glEnd();
 
 	//left side
-	glColor3f(0.0, 1.0, 1.0);
+//	glColor3f(0.0, 1.0, 1.0);
+	Texture tex6("./textures/wall 3.jpg");
         glBegin(GL_POLYGON);
-                glVertex3d(-15.0, -15.0, -6.0);
-                glVertex3d(-15.0, -15.0, 4.0);
-                glVertex3d(15.0, -15.0, 4.0);
-                glVertex3d(15.0, -15.0, -6.0);
+               glTexCoord2d(0.0, 0.0);  glVertex3d(-15.0, -15.0, -6.0);
+               glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, -15.0, 4.0);
+               glTexCoord2d(1.0, 1.0);  glVertex3d(15.0, -15.0, 4.0);
+               glTexCoord2d(0.0, 1.0); glVertex3d(15.0, -15.0, -6.0);
         glEnd();
 }
 
