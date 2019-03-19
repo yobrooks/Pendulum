@@ -51,7 +51,7 @@ void drawTable()
 void defineWalls()
 {
 	//ceiling?
-	Texture tex1("./textures/wall 4.jpg");
+	Texture tex1("./textures/wall 6.jpg");
 //	glColor3f(0.0, 0.0, 1.0);
 	glBegin(GL_POLYGON);
 		glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, 4.0);
@@ -72,7 +72,7 @@ void defineWalls()
 	
 	//front face
 	//glColor3f(1.0, 0.0, 0.0);
-	Texture tex3("./textures/wall 3.jpg");
+	Texture tex3("./textures/wall 5.jpg");
 	glBegin(GL_POLYGON);
 		glTexCoord2d(0.0, 0.0); glVertex3d(15.0, -15.0, 4.0);
 		glTexCoord2d(1.0, 0.0); glVertex3d(15.0, 15.0, 4.0);
@@ -82,7 +82,7 @@ void defineWalls()
 
 	//back side?
 	//glColor3f(1.0, 1.0, 0.0);
-	Texture tex4("./textures/wall 2.jpg");
+	Texture tex4("./textures/wall 1.jpg");
         glBegin(GL_POLYGON);
             		glTexCoord2d(0.0, 0.0);	   glVertex3d(-15.0, -15.0, -6.0);
                 	glTexCoord2d(0.0, 1.0);    glVertex3d(-15.0, 15.0, -6.0);
@@ -94,7 +94,7 @@ void defineWalls()
 
 	//right side
 //	glColor3f(1.0, 0.0, 1.0);
-	Texture tex5("./textures/wall 3.jpg");
+	Texture tex5("./textures/wall 5.jpg");
         glBegin(GL_POLYGON);
                glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, 15.0, 4.0);
                glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, -6.0);
@@ -104,7 +104,7 @@ void defineWalls()
 
 	//left side
 //	glColor3f(0.0, 1.0, 1.0);
-	Texture tex6("./textures/wall 3.jpg");
+	Texture tex6("./textures/wall 5.jpg");
         glBegin(GL_POLYGON);
                glTexCoord2d(0.0, 0.0);  glVertex3d(-15.0, -15.0, -6.0);
                glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, -15.0, 4.0);

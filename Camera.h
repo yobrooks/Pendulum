@@ -1,4 +1,5 @@
-
+#ifndef CAMERA_H
+#define CAMERA_H
 
 #include "math.h"
 
@@ -42,6 +43,7 @@
 		void direction();*/
 };
 
+#endif
 
 
 

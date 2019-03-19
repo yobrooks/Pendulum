@@ -4,18 +4,50 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-CAM_A	constants.h	/^float CAM_A = 15.0, CAM_B = 45.0, CAM_C = 45.0;$/;"	v
-CAM_B	constants.h	/^float CAM_A = 15.0, CAM_B = 45.0, CAM_C = 45.0;$/;"	v
-CAM_C	constants.h	/^float CAM_A = 15.0, CAM_B = 45.0, CAM_C = 45.0;$/;"	v
 CENTER_X	constants.h	/^float CENTER_X = 0.0, CENTER_Y = 0.0, CENTER_Z = 0.0;$/;"	v
 CENTER_Y	constants.h	/^float CENTER_X = 0.0, CENTER_Y = 0.0, CENTER_Z = 0.0;$/;"	v
 CENTER_Z	constants.h	/^float CENTER_X = 0.0, CENTER_Y = 0.0, CENTER_Z = 0.0;$/;"	v
+Camera	Camera.cpp	/^	Camera::Camera()$/;"	f	class:Camera
+Camera	Camera.h	/^	class Camera{$/;"	c
+EYE_X	constants.h	/^float EYE_X = 15.0, EYE_Y =  0.0, EYE_Z = 0.0;$/;"	v
+EYE_Y	constants.h	/^float EYE_X = 15.0, EYE_Y =  0.0, EYE_Z = 0.0;$/;"	v
+EYE_Z	constants.h	/^float EYE_X = 15.0, EYE_Y =  0.0, EYE_Z = 0.0;$/;"	v
+HEADER_SIMPLE_OPENGL_IMAGE_LIBRARY	SOIL.h	41;"	d
 Nstep	pendMath.cpp	/^int Nstep = 1000000;$/;"	v
+SOIL_CREATE_NEW_ID	SOIL.h	/^	SOIL_CREATE_NEW_ID = 0$/;"	e	enum:__anon2
+SOIL_DDS_CUBEMAP_FACE_ORDER	SOIL.h	128;"	d
+SOIL_FLAG_COMPRESS_TO_DXT	SOIL.h	/^	SOIL_FLAG_COMPRESS_TO_DXT = 32,$/;"	e	enum:__anon3
+SOIL_FLAG_CoCg_Y	SOIL.h	/^	SOIL_FLAG_CoCg_Y = 256,$/;"	e	enum:__anon3
+SOIL_FLAG_DDS_LOAD_DIRECT	SOIL.h	/^	SOIL_FLAG_DDS_LOAD_DIRECT = 64,$/;"	e	enum:__anon3
+SOIL_FLAG_INVERT_Y	SOIL.h	/^	SOIL_FLAG_INVERT_Y = 16,$/;"	e	enum:__anon3
+SOIL_FLAG_MIPMAPS	SOIL.h	/^	SOIL_FLAG_MIPMAPS = 2,$/;"	e	enum:__anon3
+SOIL_FLAG_MULTIPLY_ALPHA	SOIL.h	/^	SOIL_FLAG_MULTIPLY_ALPHA = 8,$/;"	e	enum:__anon3
+SOIL_FLAG_NTSC_SAFE_RGB	SOIL.h	/^	SOIL_FLAG_NTSC_SAFE_RGB = 128,$/;"	e	enum:__anon3
+SOIL_FLAG_POWER_OF_TWO	SOIL.h	/^	SOIL_FLAG_POWER_OF_TWO = 1,$/;"	e	enum:__anon3
+SOIL_FLAG_TEXTURE_RECTANGLE	SOIL.h	/^	SOIL_FLAG_TEXTURE_RECTANGLE = 512$/;"	e	enum:__anon3
+SOIL_FLAG_TEXTURE_REPEATS	SOIL.h	/^	SOIL_FLAG_TEXTURE_REPEATS = 4,$/;"	e	enum:__anon3
+SOIL_HDR_RGBE	SOIL.h	/^	SOIL_HDR_RGBE = 0,$/;"	e	enum:__anon5
+SOIL_HDR_RGBdivA	SOIL.h	/^	SOIL_HDR_RGBdivA = 1,$/;"	e	enum:__anon5
+SOIL_HDR_RGBdivA2	SOIL.h	/^	SOIL_HDR_RGBdivA2 = 2$/;"	e	enum:__anon5
+SOIL_LOAD_AUTO	SOIL.h	/^	SOIL_LOAD_AUTO = 0,$/;"	e	enum:__anon1
+SOIL_LOAD_L	SOIL.h	/^	SOIL_LOAD_L = 1,$/;"	e	enum:__anon1
+SOIL_LOAD_LA	SOIL.h	/^	SOIL_LOAD_LA = 2,$/;"	e	enum:__anon1
+SOIL_LOAD_RGB	SOIL.h	/^	SOIL_LOAD_RGB = 3,$/;"	e	enum:__anon1
+SOIL_LOAD_RGBA	SOIL.h	/^	SOIL_LOAD_RGBA = 4$/;"	e	enum:__anon1
+SOIL_SAVE_TYPE_BMP	SOIL.h	/^	SOIL_SAVE_TYPE_BMP = 1,$/;"	e	enum:__anon4
+SOIL_SAVE_TYPE_DDS	SOIL.h	/^	SOIL_SAVE_TYPE_DDS = 2$/;"	e	enum:__anon4
+SOIL_SAVE_TYPE_TGA	SOIL.h	/^	SOIL_SAVE_TYPE_TGA = 0,$/;"	e	enum:__anon4
+Texture	Texture.cpp	/^Texture::Texture(const char* fileName)$/;"	f	class:Texture
+Texture	Texture.h	/^class Texture{$/;"	c
 VIEWPORT_POS	constants.h	/^const int VIEWPORT_POS = 100;$/;"	v
 WINDOW_HEIGHT	constants.h	/^const int WINDOW_HEIGHT = 500;$/;"	v
 askSynch	sleepFunc.cpp	/^void askSynch(int num, char** args)$/;"	f
+center	Camera.h	/^		float center [3];$/;"	m	class:Camera
+crossProd	Camera.cpp	/^                void Camera::crossProd(float num1 [], float num2 [], float cross [])$/;"	f	class:Camera
 defineWalls	drawRoom.cpp	/^void defineWalls()$/;"	f
+delta	Camera.h	/^                float delta;$/;"	m	class:Camera
 desiredFR	constants.h	/^float desiredFR;$/;"	v
+direction	Camera.cpp	/^	 void Camera::direction()$/;"	f	class:Camera
 display	display.cpp	/^void display()$/;"	f
 drawExtras	drawRoom.cpp	/^void drawExtras()$/;"	f
 drawLeg	drawRoom.cpp	/^void drawLeg()$/;"	f
@@ -25,17 +57,28 @@ drawSphere	drawShape.cpp	/^void drawSphere()$/;"	f
 drawStand	drawShape.cpp	/^void drawStand()$/;"	f
 drawString	frameRate.cpp	/^void drawString(int x, int y, void *font, const char *string)$/;"	f
 drawTable	drawRoom.cpp	/^void drawTable()$/;"	f
+eye	Camera.h	/^		float eye [3];$/;"	m	class:Camera
 findFPS	frameRate.cpp	/^void findFPS()$/;"	f
 findPeriod	frameRate.cpp	/^void findPeriod()$/;"	f
+forward	Camera.h	/^                float forward [3];$/;"	m	class:Camera
 fpEnd	frameRate.cpp	/^static bool pStart=false, pEnd=false, fpStart=false, fpEnd=false;$/;"	v	file:
 fpStart	frameRate.cpp	/^static bool pStart=false, pEnd=false, fpStart=false, fpEnd=false;$/;"	v	file:
 fpp	constants.h	/^long int fpp=0;$/;"	v
 fps	constants.h	/^float fps = (float) 0.0;$/;"	v
 frame	constants.h	/^int frame = 0;$/;"	v
+getID	Texture.cpp	/^GLuint Texture::getID()$/;"	f	class:Texture
 glutLockFrameRate	sleepFunc.cpp	/^void glutLockFrameRate()$/;"	f
+height	Texture.h	/^		 int height;$/;"	m	class:Texture
 init	init.cpp	/^void init(void)$/;"	f
 keyboard	keyboard.cpp	/^void keyboard(unsigned char key, int x, int y)$/;"	f
 main	main.cpp	/^int main(int argc, char** argv)$/;"	f
+moveBackward	Camera.cpp	/^	void Camera::moveBackward()$/;"	f	class:Camera
+moveDown	Camera.cpp	/^	void Camera::moveDown()$/;"	f	class:Camera
+moveForward	Camera.cpp	/^	void Camera::moveForward()$/;"	f	class:Camera
+moveLeft	Camera.cpp	/^	void Camera:: moveLeft()$/;"	f	class:Camera
+moveRight	Camera.cpp	/^	void Camera::moveRight()$/;"	f	class:Camera
+moveUp	Camera.cpp	/^	void Camera::moveUp()$/;"	f	class:Camera
+normalize	Camera.cpp	/^                void Camera::normalize(float num [])$/;"	f	class:Camera
 oldTime	constants.h	/^int oldTime = 0;$/;"	v
 omega	constants.h	/^double omega = 0.0;$/;"	v
 omegadot	pendMath.cpp	/^double omegadot(double t, double theta, double omega)$/;"	f
@@ -45,11 +88,19 @@ period	constants.h	/^double period=0;$/;"	v
 prevOmega	constants.h	/^double prevOmega = 0;$/;"	v
 prevTimeCount	frameRate.cpp	/^static double timeCount=0.0, prevTimeCount=0.0;$/;"	v	file:
 reshape	reshape.cpp	/^void reshape (int w, int h)$/;"	f
+returnOriginal	Camera.cpp	/^	void Camera::returnOriginal()$/;"	f	class:Camera
+rotateX	Camera.cpp	/^                void Camera::rotateX(float num [], float changeX)$/;"	f	class:Camera
+rotateY	Camera.cpp	/^                void Camera::rotateY(float num [], float changeY)$/;"	f	class:Camera
+rotateZ	Camera.cpp	/^	  void Camera::rotateZ(float num [], float changeZ)$/;"	f	class:Camera
 run	runPhys.cpp	/^void run()$/;"	f
 specialKeyboard	specialKeys.cpp	/^void specialKeyboard(int key, int x, int y)$/;"	f
 step	pendMath.cpp	/^void step(double *t, double *theta, double *omega, double *prevOmega )$/;"	f
 t	constants.h	/^double t = 0.0;$/;"	v
+texID	Texture.h	/^	private: GLuint texID;$/;"	m	class:Texture
 theta	constants.h	/^double theta = M_PI\/4.0;$/;"	v
 thetadot	pendMath.cpp	/^double thetadot(double t, double theta, double omega)$/;"	f
 timeCount	frameRate.cpp	/^static double timeCount=0.0, prevTimeCount=0.0;$/;"	v	file:
 totFrame	frameRate.cpp	/^static long int totFrame=0;$/;"	v	file:
+translateXYZ	Camera.cpp	/^ 	void Camera::translateXYZ(float num [], float dx, float dy, float dz)$/;"	f	class:Camera
+up	Camera.h	/^		float up [3];$/;"	m	class:Camera
+width	Texture.h	/^		 int width;$/;"	m	class:Texture

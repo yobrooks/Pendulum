@@ -15,7 +15,7 @@ void drawSphere()
        glTranslated(0.0,0.0,-2.7);
        glColor3f (1.0,1.0,1.0);
        gluSphere(gluNewQuadric(),
-            (GLdouble) 0.3,
+            (GLdouble) 0.6,
             (GLint)    10,
             (GLint)    10 );
        glPopMatrix();
@@ -28,7 +28,7 @@ void drawStand()
 {
 	
 	//draw base
-	glPushMatrix();
+	/*glPushMatrix();
 	glColor3f(1.0, 1.0, 1.0);
 	glScaled(5.0, 5.0, 0.5);
 	glTranslated(0.0, 0.0, -4.5);
@@ -57,7 +57,7 @@ void drawStand()
 		(GLdouble) 0.2,
 		(GLdouble) 2.5, 
 		(GLint) 10, (GLint) 10);
-	glPopMatrix();
+	glPopMatrix();*/
 
 
 	//draw string

@@ -4,13 +4,12 @@
 
 	//define public variables; three arrays that will hold the eye, center nad up positions for camera
 
-	//float delta = 0.2;
 	//Default Constructor; defines the initial values of the camera
 	Camera::Camera()
 	{
 		eye[0] = 5.0, eye[1] = 0.0, eye[2] = 0.0;
 		center[0] = 0.0, center[1] = 0.0, center [2] = 0.0;
-		up[0] = 0.0, up[1] = 0.0, up[1] = 1.0;
+		up[0] = 0.0, up[1] = 0.0, up[2] = 1.0;
 	}
 
  	void Camera::translateXYZ(float num [], float dx, float dy, float dz)

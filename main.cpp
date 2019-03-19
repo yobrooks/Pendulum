@@ -2,6 +2,8 @@
 #include "prototypes.h"
 #include "globals.h"
 #include "constants.h"
+#include "Camera.h"
+
 
 int main(int argc, char** argv)
 {
