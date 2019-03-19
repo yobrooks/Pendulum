@@ -36,9 +36,9 @@ void display()
    // drawSphere();
     //drawScale();
     //drawPeriod();
-    drawStand();
-    drawSphere();
-    defineWalls();
+    //drawStand();
+   // drawSphere();
+    //defineWallsText();
    // drawTable();
    //
  /*  Texture tex2("./textures/studio54.jpg");
@@ -49,12 +49,24 @@ void display()
       glTexCoord2d( 1.0, 1.0);   glVertex2d( 10.0, 10.0);
       glTexCoord2d( 1.0, 0.0);   glVertex2d( 10.0,  0.0 );
 
-    glEnd();
+    glEnd();*/
     //determines if synch needs to be applied
-    if(desiredFR>0.0)
+    if(desiredFR>0)
     {
-	glutLockFrameRate();
-    }*/
+//	glutLockFrameRate();
+	drawStand();
+
+	drawSphereColor();
+	drawRoomColor();
+    }
+
+   else{
+		drawStand();
+		drawSphereText();
+		defineWallsText();
+
+	}
+
     glutSwapBuffers();
  //
     //glFlush();

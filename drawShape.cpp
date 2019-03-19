@@ -3,10 +3,10 @@
 #include "globals.h"
 #include <math.h>
 #include <iostream>
-
+#include "Texture.h"
 
 //draw the pendulum ball
-void drawSphere()
+void drawSphereColor()
 {
        glPushMatrix();
        glTranslated(0.0, -0.4, 0.0);
@@ -23,6 +23,20 @@ void drawSphere()
 
 }
 
+void drawSphereText()
+{
+	GLUquadric *disco;
+	disco = gluNewQuadric();
+	gluQuadricTexture(disco, GL_TRUE);
+	Texture discoBall("./textures/disco ball.jpg");
+	glPushMatrix();
+	glTranslated(0.0, -0.4, 0.0);
+        glTranslated(0.0,0.0,2.7);
+        glRotated((double)180*theta/M_PI, 0, 1, 0);
+        glTranslated(0.0,0.0,-2.7);
+	gluSphere(disco, 0.6, 10, 10);
+	glPopMatrix();
+}
 //draw the stand that the pendulum ball is attached to 
 void drawStand()
 {

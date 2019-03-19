@@ -14,7 +14,7 @@ int main(int argc, char** argv)
     glutInitWindowPosition (VIEWPORT_POS, VIEWPORT_POS);
     glutCreateWindow (argv[0]);
     glewInit();
-    //init ();
+    init ();
     glClearColor(0.0,0.0,0.0,0.0);
     glLoadIdentity();
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
