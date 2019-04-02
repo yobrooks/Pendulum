@@ -30,17 +30,7 @@
 		void moveUp();
 		void moveDown();
 		void returnOriginal();
-
-	/*private:
-		float delta;
-		float forward [3];
-		void translateXYZ(float num [], float dx, float dy, float dz);
-		void rotateX(float num [], float changeX);
-			void rotateY(float num [], float changeY);
-		void rotateZ(float num [], float changeZ);
-		void crossProd(float num1 [], float num2 [], float cross[]);
-		void normalize(float num []);
-		void direction();*/
+		
 };
 
 #endif

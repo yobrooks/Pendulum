@@ -18,13 +18,13 @@ void display()
                 CENTER_X,   CENTER_Y, CENTER_Z,  // Center
                 0.0,   0.0, 1.0); // Up*/
 
- /*     gluLookAt(camera.eye[0], camera.eye[1], camera.eye[2],
+      gluLookAt(camera.eye[0], camera.eye[1], camera.eye[2],
 		camera.center[0], camera.center[1], camera.center[2],
-		camera.up[0], camera.up[1], camera.up[2]);*/
+		camera.up[0], camera.up[1], camera.up[2]);
 
-	gluLookAt(10.0, 0.0, 0.0,
+/*	gluLookAt(10.0, 0.0, 0.0,
                 0.0, 0.0, 0,
-                0.0, 0.0, 1.0);
+                0.0, 0.0, 1.0);*/
 
 
     glEnable(GL_TEXTURE_2D);

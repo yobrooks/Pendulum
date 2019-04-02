@@ -1,6 +1,5 @@
 #include "Camera.h"
 
-//global variable declarations
 extern const int WINDOW_HEIGHT;
 extern const int VIEWPORT_POS;
 extern int frame;
@@ -13,4 +12,4 @@ extern double period;
 extern double prevOmega;
 extern long int fpp;
 extern float desiredFR;
-//extern Camera camera;
+extern Camera camera;

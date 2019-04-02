@@ -23,3 +23,5 @@ void defineWallsText();
 void specialKeyboard(int,  int, int);
 void drawRoomColor();
 void drawSphereText();
+
+//Camera camera;
