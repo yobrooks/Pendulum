@@ -1,5 +1,6 @@
 #include "Camera.h"
-
+#include <iostream>
+#include <vector>
 extern const int WINDOW_HEIGHT;
 extern const int VIEWPORT_POS;
 extern int frame;
@@ -13,3 +14,4 @@ extern double prevOmega;
 extern long int fpp;
 extern float desiredFR;
 extern Camera camera;
+extern std::vector<GLuint> textures;

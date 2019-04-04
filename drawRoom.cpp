@@ -2,7 +2,7 @@
 #include "prototypes.h"
 #include "globals.h"
 #include <iostream>
-#include "Texture.h"
+
 
 void drawLeg()
 {
@@ -50,9 +50,9 @@ void drawTable()
 
 void defineWallsText()
 {
-	//ceiling?
-	Texture tex1("./textures/wall 6.jpg");
-//	glColor3f(0.0, 0.0, 1.0);
+	//ceiling
+	
+	glBindTexture(GL_TEXTURE_2D, textures[0]);
 	glPushMatrix();
 	glBegin(GL_POLYGON);
 		glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, 4.0);
@@ -61,10 +61,10 @@ void defineWallsText()
 		glTexCoord2d(0.0, 1.0); glVertex3d(15.0, -15.0, 4.0);
 	glEnd();	
 	glPopMatrix();
-	//floor?
-//	glColor3f(0.0, 1.0, 0.0);
+
+	//floor
+	 glBindTexture(GL_TEXTURE_2D, textures[1]);
 	glPushMatrix();
-	Texture tex2("./textures/floor1.jpg");
 	glBegin(GL_POLYGON);
                 glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, -6.0);
                 glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, -6.0);
@@ -72,9 +72,9 @@ void defineWallsText()
                 glTexCoord2d(0.0, 1.0); glVertex3d(15.0, -15.0, -6.0);
 	glEnd();
 	glPopMatrix();
+
 	//front face
-	//glColor3f(1.0, 0.0, 0.0);
-	Texture tex3("./textures/wall 6.jpg");
+	 glBindTexture(GL_TEXTURE_2D, textures[2]);
 	glPushMatrix();
 	glBegin(GL_POLYGON);
 		glTexCoord2d(0.0, 0.0); glVertex3d(15.0, -15.0, 4.0);
@@ -83,9 +83,9 @@ void defineWallsText()
 		glTexCoord2d(0.0, 1.0); glVertex3d(15.0, -15.0, -6.0);
 	glEnd();
 	glPopMatrix();
-	//back side?
-	//glColor3f(1.0, 1.0, 0.0);
-	Texture tex4("./textures/wall 2.jpg");
+
+	//back side
+	 glBindTexture(GL_TEXTURE_2D, textures[3]);
        	glPushMatrix();
 	 glBegin(GL_POLYGON);
             		glTexCoord2d(0.0, 0.0);	   glVertex3d(-15.0, -15.0, -6.0);
@@ -97,8 +97,7 @@ void defineWallsText()
 	
 
 	//right side
-//	glColor3f(1.0, 0.0, 1.0);
-	Texture tex5("./textures/wall 6.jpg");
+	 glBindTexture(GL_TEXTURE_2D, textures[4]);
     	glPushMatrix();
 	    glBegin(GL_POLYGON);
                glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, 15.0, 4.0);
@@ -108,9 +107,8 @@ void defineWallsText()
         glEnd();
 	glPopMatrix();
 	//left side
-//	glColor3f(0.0, 1.0, 1.0);
+	 glBindTexture(GL_TEXTURE_2D, textures[5]);
 	glPushMatrix();
-	Texture tex6("./textures/wall 6.jpg");
         glBegin(GL_POLYGON);
                glTexCoord2d(0.0, 0.0);  glVertex3d(-15.0, -15.0, -6.0);
                glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, -15.0, 4.0);

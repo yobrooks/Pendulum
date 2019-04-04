@@ -6,7 +6,7 @@
 
 void specialKeyboard(int key, int x, int y)
 {
-	/*if(key == GLUT_KEY_PAGE_UP)
+	if(key == GLUT_KEY_PAGE_UP)
 	{
 		camera.moveUp();
 	}
@@ -16,7 +16,7 @@ void specialKeyboard(int key, int x, int y)
         	camera.moveDown();       
         }
 
-	 if(key == GLUT_KEY_UP)
+	 /*if(key == GLUT_KEY_UP)
         {
                 
         }

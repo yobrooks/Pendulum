@@ -1,4 +1,5 @@
-
+#ifndef CAMERA_CPP
+#define CAMERA_CPP
 #include <math.h>
 #include "Camera.h"
 
@@ -131,7 +132,7 @@
 	{
 		eye[0] = 5.0, eye[1] = 0.0, eye[2] = 0.0;
                 center[0] = 0.0, center[1] = 0.0, center [2] = 0.0;
-                up[0] = 0.0, up[1] = 0.0, up[1] = 1.0;
+                up[0] = 0.0, up[1] = 0.0, up[2] = 1.0;
 	}
 
 	
@@ -186,4 +187,4 @@
 			forward[2] = center[2] - eye[2];		
 			normalize(forward);
 		}*/
-
+#endif

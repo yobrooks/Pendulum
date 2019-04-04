@@ -1,4 +1,4 @@
-
+#include "openGl.h"
 //function prototypes
 void init();
 void display();
@@ -24,4 +24,6 @@ void specialKeyboard(int,  int, int);
 void drawRoomColor();
 void drawSphereText();
 
+
+GLuint loadTexture(const char* );
 //Camera camera;
