@@ -16,30 +16,28 @@ void display()
 		camera.up[0], camera.up[1], camera.up[2]);
 
 
-
-    glEnable(GL_TEXTURE_2D);
-    glEnable(GL_DEPTH_TEST);
+	if(desiredFR>0)
+	{
+		drawStand();
+		drawRoomColor();
+		drawSphereColor();
+		glutSwapBuffers();
+	}else{
+		    glEnable(GL_TEXTURE_2D);
+		    glEnable(GL_DEPTH_TEST);
   
     //determines if synch needs to be applied
-    /*if(desiredFR>0)
-    {
 //	glutLockFrameRate();
-	drawStand();
 
-	drawSphereColor();
-	drawRoomColor();
-    }
-
-   else{
-		drawStand();
+		
 		drawSphereText();
 		defineWallsText();
 
-	}*/
+	
 
 	
-	drawSphereText();
-	defineWallsText();
+	//drawSphereText();
+	//defineWallsText();
 
 	
 	//drawSphereColor();
@@ -53,6 +51,6 @@ void display()
     //glFlush();
     glDisable(GL_TEXTURE_2D);
     glDisable(GL_DEPTH_TEST);
-
+}
     
 }

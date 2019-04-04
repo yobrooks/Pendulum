@@ -24,26 +24,7 @@ void drawSphereColor()
 
 void drawSphereText()
 {
-	/*GLuint myFirstTexture;
-	unsigned char* image;
-	int width, height;  
-		
-	glGenTextures(1, &myFirstTexture);  
-    	glBindTexture(GL_TEXTURE_2D, myFirstTexture);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-	image = SOIL_load_image("./textures/disco ball.jpg", &width, &height, 0, SOIL_LOAD_RGB); 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-
-	glGenerateMipmap(GL_TEXTURE_2D);
-
-	SOIL_free_image_data(image);	*/
+	//the movement of the string is off, also need to raise the pendulum severely
 
 	glBindTexture(GL_TEXTURE_2D, textures[6]);
 	GLUquadric *disco;

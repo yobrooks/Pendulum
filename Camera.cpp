@@ -83,9 +83,9 @@
 		eye[0] = eye[0] - forward[0]  * delta;
 		eye[1] = eye[1] - forward[1]  * delta;
 		eye[2] = eye[2] - forward[2]  * delta;
-		eye[0] = center[0] - forward[0]  * delta;
-		eye[1] = center[1] - forward[1]  * delta;
-		eye[2] = center[2] - forward[2]  * delta;
+		center[0] = center[0] - forward[0]  * delta;
+		center[1] = center[1] - forward[1]  * delta;
+		center[2] = center[2] - forward[2]  * delta;
 		
 	}
 
