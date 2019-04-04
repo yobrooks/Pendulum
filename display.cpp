@@ -36,10 +36,17 @@ void display()
 		defineWallsText();
 
 	}*/
+
+	
 	drawSphereText();
 	defineWallsText();
 
-	std::cout << camera.center[0] << std::endl;
+	
+	//drawSphereColor();
+	//drawStand();
+	//drawRoomColor();
+	
+	//std::cout << camera.center[0] << std::endl;
 
     glutSwapBuffers();
  //

@@ -7,7 +7,6 @@
 
 	class Camera{
 	 private:
-                float delta;
                 float forward [3];
                 void translateXYZ(float num [], float dx, float dy, float dz);
                 void rotateX(float num [], float changeX);
@@ -23,12 +22,12 @@
 		float center [3];
 		float up [3];
 		Camera();
-		void moveForward();
-		void moveBackward();
-		void moveLeft();
-		void moveRight();
-		void moveUp();
-		void moveDown();
+		void moveForward(float delta);
+		void moveBackward(float delta);
+		void moveLeft(float delta);
+		void moveRight(float delta);
+		void moveUp(float delta);
+		void moveDown(float delta);
 		void returnOriginal();
 		
 };

@@ -10,10 +10,10 @@ void keyboard(unsigned char key, int x, int y)
 	{
 		case 'q' : exit(0); //hitting 'q'/'Q' exits the program
 		case 'r' : camera.returnOriginal(); glutPostRedisplay(); break;
-		case 'w' : camera.moveForward(); glutPostRedisplay(); break;
-		case 'a' : camera.moveLeft(); glutPostRedisplay(); break;
-		case 's' : camera.moveBackward(); glutPostRedisplay(); break;
-		case 'd' : camera.moveRight(); glutPostRedisplay(); break;
+		case 'w' : camera.moveForward(0.2); glutPostRedisplay(); break;
+		case 'a' : camera.moveLeft(0.2); glutPostRedisplay(); break;
+		case 's' : camera.moveBackward(0.2); glutPostRedisplay(); break;
+		case 'd' : camera.moveRight(0.2); glutPostRedisplay(); break;
 	}
 
 }

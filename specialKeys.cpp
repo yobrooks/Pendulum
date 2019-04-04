@@ -8,12 +8,12 @@ void specialKeyboard(int key, int x, int y)
 {
 	if(key == GLUT_KEY_PAGE_UP)
 	{
-		camera.moveUp();
+		camera.moveUp(0.2);
 	}
 
 	if(key == GLUT_KEY_PAGE_DOWN)
         {
-        	camera.moveDown();       
+        	camera.moveDown(0.2);       
         }
 
 	 /*if(key == GLUT_KEY_UP)

@@ -65,7 +65,7 @@
                 }
 
 
-	void Camera::moveForward()
+	void Camera::moveForward(float delta)
 	{
 		direction();
 		eye[0] = eye[0] + forward[0]  * delta;
@@ -77,7 +77,7 @@
 		
 	}
 	
-	void Camera::moveBackward()
+	void Camera::moveBackward(float delta)
 	{
 		direction();
 		eye[0] = eye[0] - forward[0]  * delta;
@@ -89,7 +89,7 @@
 		
 	}
 
-	void Camera:: moveLeft()
+	void Camera:: moveLeft(float delta)
 	{
 		direction();
 		float result [3];
@@ -102,7 +102,7 @@
 		center[2] = center[2] - result[2] * delta;
 	}
 
-	void Camera::moveRight()
+	void Camera::moveRight(float delta)
 	{
 		direction();
                 float result [3];
@@ -115,13 +115,13 @@
                 center[2] = center[2] + result[2] * delta;
 	}
 
-	void Camera::moveUp()
+	void Camera::moveUp(float delta)
 	{
 		eye[2] = eye[2] + delta;
 		center[2] = center[2] + delta;
 	}
 
-	void Camera::moveDown()
+	void Camera::moveDown(float delta)
 	{
 		eye[2] = eye[2] - delta;
 		center[2] = center[2] -delta;
