@@ -31,11 +31,11 @@ void drawSphereText()
 	disco = gluNewQuadric();
 	gluQuadricTexture(disco, GL_TRUE);
 	glPushMatrix();
-	glTranslated(0.0, -0.4, 0.0);
-        glTranslated(0.0,0.0,2.7);
+	//glTranslated(0.0, -0.4, 0.0);
+        glTranslated(0.0,0.0, 2.0);
         glRotated((double)180*theta/M_PI, 0, 1, 0);
-        glTranslated(0.0,0.0,-2.7);
-	gluSphere(disco, 0.6, 10, 10);
+        glTranslated(0.0,0.0,-2.0);
+	gluSphere(disco, 0.6, 20, 20);
 	glPopMatrix();
 
 	glBindTexture(GL_TEXTURE_2D, textures[7]);
@@ -43,15 +43,15 @@ void drawSphereText()
 	cord = gluNewQuadric();
 	gluQuadricTexture(cord, GL_TRUE);
 	glPushMatrix();
-        glTranslated(0.0, -0.4, 0.0);
-        glTranslated(0.0, 0.0, 2.7); //swings with the ball
+        //glTranslated(0.0, -0.4, 0.0);
+        glTranslated(0.0, 0.0, 2.0); //swings with the ball
         glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
-        glTranslated(0.0, 0.0, -2.7);
+        glTranslated(0.0, 0.0, -2.0);
         glColor3f(1.0, 1.0, 1.0);
         gluCylinder(cord,
                 (GLdouble) 0.05,
                 (GLdouble) 0.05,
-                (GLdouble) 2.8,
+                (GLdouble) 2.0,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
 

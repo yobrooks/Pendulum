@@ -94,12 +94,12 @@
 		direction();
 		float result [3];
 		crossProd(up, forward, result);		
-		eye[0] = eye[0] - result[0] * delta;
-		eye[1] = eye[1] - result[1] * delta;
-		eye[2] = eye[2] - result[2] * delta;
-		center[0] = center[0] - result[0] * delta;
-		center[1] = center[1] - result[1] * delta;
-		center[2] = center[2] - result[2] * delta;
+		eye[0] = eye[0] + result[0] * delta;
+		eye[1] = eye[1] + result[1] * delta;
+		eye[2] = eye[2] + result[2] * delta;
+		center[0] = center[0] + result[0] * delta;
+		center[1] = center[1] + result[1] * delta;
+		center[2] = center[2] + result[2] * delta;
 	}
 
 	void Camera::moveRight(float delta)
@@ -107,12 +107,12 @@
 		direction();
                 float result [3];
 		crossProd(up, forward, result);
-                eye[0] = eye[0] + result[0] * delta;
-                eye[1] = eye[1] + result[1] * delta;
-                eye[2] = eye[2] + result[2] * delta;
-                center[0] = center[0] + result[0] * delta;
-                center[1] = center[1] + result[1] * delta;
-                center[2] = center[2] + result[2] * delta;
+                eye[0] = eye[0] - result[0] * delta;
+                eye[1] = eye[1] - result[1] * delta;
+                eye[2] = eye[2] - result[2] * delta;
+                center[0] = center[0] - result[0] * delta;
+                center[1] = center[1] - result[1] * delta;
+                center[2] = center[2] - result[2] * delta;
 	}
 
 	void Camera::moveUp(float delta)
