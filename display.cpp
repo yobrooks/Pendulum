@@ -33,24 +33,10 @@ void display()
 		drawSphereText();
 		defineWallsText();
 
-	
+   		glutSwapBuffers();
 
-	
-	//drawSphereText();
-	//defineWallsText();
-
-	
-	//drawSphereColor();
-	//drawStand();
-	//drawRoomColor();
-	
-	//std::cout << camera.center[0] << std::endl;
-
-    glutSwapBuffers();
- //
-    //glFlush();
-    glDisable(GL_TEXTURE_2D);
-    glDisable(GL_DEPTH_TEST);
-}
+	        glDisable(GL_TEXTURE_2D);
+   	  	glDisable(GL_DEPTH_TEST);
+	}
     
 }
