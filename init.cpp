@@ -14,6 +14,7 @@ void init(void)
 {
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glLoadIdentity();
+
    	//load textures and put them into vector for later use
     GLuint tex1 = loadTexture("./textures/wall 6.jpg"); textures.push_back(tex1);
     GLuint tex2 = loadTexture("./textures/floor1.jpg"); textures.push_back(tex2);
@@ -23,6 +24,11 @@ void init(void)
     GLuint tex6 = loadTexture("./textures/wall 6.jpg"); textures.push_back(tex6);
     GLuint tex7 = loadTexture("./textures/disco ball.jpg"); textures.push_back(tex7);
     GLuint tex8 = loadTexture("./textures/cord.jpg"); textures.push_back(tex8);
+
+	glShadeModel(GL_SMOOTH);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
 }
 
 #endif

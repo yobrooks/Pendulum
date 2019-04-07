@@ -18,7 +18,7 @@ void display()
 		camera.center[0], camera.center[1], camera.center[2],
 		camera.up[0], camera.up[1], camera.up[2]);
 
-		#ifdef TEXTURE
+		//#ifdef TEXTURE
 		glEnable(GL_TEXTURE_2D);
 	        glEnable(GL_DEPTH_TEST);
   
@@ -35,11 +35,11 @@ void display()
    	  	glDisable(GL_DEPTH_TEST);
 	
 
-		#else
+	/*	#else
                 drawRoomColor();
                 drawSphereColor();
                 glutSwapBuffers();
- 		#endif   
+ 		#endif   */
 }
 
 #endif
