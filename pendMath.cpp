@@ -1,3 +1,6 @@
+#ifndef PENDMATH_CPP
+#define PENDMATH_CPP
+
 #include "prototypes.h"
 #include "globals.h"
 #include <stdio.h>
@@ -52,3 +55,4 @@ void step(double *t, double *theta, double *omega, double *prevOmega )
     *t = *t + h;
 }
 
+#endif

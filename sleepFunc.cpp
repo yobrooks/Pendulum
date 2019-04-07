@@ -1,3 +1,6 @@
+#ifndef SLEEPFUNC_CPP
+#define SLEEPFUNC_CPP
+
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
@@ -28,3 +31,5 @@ void askSynch(int num, char** args)
 		}
 	}			
 }
+
+#endif

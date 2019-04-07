@@ -1,5 +1,9 @@
 //opengl libraries
 
- #include <GL/gl.h>
- #include <GL/glu.h>
+#ifndef OPEN_GL
+#define OPEN_GL
+
+ #include <GL/glew.h>
  #include <GL/glut.h>
+
+#endif

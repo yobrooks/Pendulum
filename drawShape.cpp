@@ -1,80 +1,82 @@
+#ifndef DRAWSHAPE_CPP
+#define DRAWSHAPE_CPP
+
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
 #include <math.h>
 #include <iostream>
 
-
-//draw the pendulum ball
-void drawSphere()
+//draw the untextured pendulum ball and string
+void drawSphereColor()
 {
+	//string
+	glPushMatrix();
+        glTranslated(0.0, 0.0, 2.5);
+        glTranslated(0.0, 0.0, 2.0);
+        glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
+        glTranslated(0.0, 0.0, -2.0);
+        glColor3f(1.0, 1.0, 1.0);
+        gluCylinder(gluNewQuadric(),
+                (GLdouble) 0.05,
+                (GLdouble) 0.05,
+                (GLdouble) 1.5,
+                (GLint) 10, (GLint) 10);
+        glPopMatrix();
+
+
+	//ball
        glPushMatrix();
-       glTranslated(0.0, -0.4, 0.0);
-       glTranslated(0.0,0.0,2.7);
+       glTranslated(0.0, 0.0, 2.0);
+       glTranslated(0.0,0.0, 2.0);
        glRotated((double)180*theta/M_PI, 0, 1, 0);
-       glTranslated(0.0,0.0,-2.7);
+       glTranslated(0.0,0.0,-2.0);
        glColor3f (1.0,1.0,1.0);
        gluSphere(gluNewQuadric(),
-            (GLdouble) 0.3,
-            (GLint)    10,
-            (GLint)    10 );
+            (GLdouble) 0.6,
+            (GLint)    20,
+            (GLint)    20 );
        glPopMatrix();
 
 
 }
 
-//draw the stand that the pendulum ball is attached to 
-void drawStand()
+//draw the sphere and string textured version
+void drawSphereText()
 {
-	
-	//draw base
-	glPushMatrix();
-	glColor3f(1.0, 1.0, 1.0);
-	glScaled(5.0, 5.0, 0.5);
-	glTranslated(0.0, 0.0, -4.5);
-	glutSolidCube(1.0);
-	glPopMatrix();
 
-        //draw stand on top of base
+	//draw ball
+	glBindTexture(GL_TEXTURE_2D, textures[6]);
+	GLUquadric *disco;
+	disco = gluNewQuadric();
+	gluQuadricTexture(disco, GL_TRUE);
 	glPushMatrix();
-	glTranslated(0.0, 2.0, 0.0);
-	glTranslated(0.0, 0.0, -2.0);
-	glColor3f(1.0, 1.0, 1.0);
-	gluCylinder(gluNewQuadric(),
-		(GLdouble) 0.2,
-		(GLdouble) 0.2,
-		(GLdouble) 4.5,
-		(GLint) 20, (GLint) 40);
+	glTranslated(0.0, 0.0, 2.0);
+        glTranslated(0.0,0.0, 2.0);
+        glRotated((double)180*theta/M_PI, 0, 1, 0);
+        glTranslated(0.0,0.0,-2.0);
+	gluSphere(disco, 0.6, 20, 20);
 	glPopMatrix();
-	
-	//draw arm
-	glPushMatrix();
-	glTranslated(0.0, 2.2, 2.7);
-	glRotated(90.0, 1.0, 0.0, 0.0);
-	glColor3f(1.0, 1.0, 1.0);
-	gluCylinder(gluNewQuadric(), 
-		(GLdouble) 0.2,
-		(GLdouble) 0.2,
-		(GLdouble) 2.5, 
-		(GLint) 10, (GLint) 10);
-	glPopMatrix();
-
 
 	//draw string
+	glBindTexture(GL_TEXTURE_2D, textures[7]);
+	GLUquadric *cord;
+	cord = gluNewQuadric();
+	gluQuadricTexture(cord, GL_TRUE);
 	glPushMatrix();
-	glTranslated(0.0, -0.4, 0.0);
-        glTranslated(0.0, 0.0, 2.7); //swings with the ball
+        glTranslated(0.0, 0.0, 2.5);
+        glTranslated(0.0, 0.0, 2.0); //swings with the ball
         glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
-        glTranslated(0.0, 0.0, -2.7);
+        glTranslated(0.0, 0.0, -2.0);
         glColor3f(1.0, 1.0, 1.0);
-        gluCylinder(gluNewQuadric(),
+        gluCylinder(cord,
                 (GLdouble) 0.05,
                 (GLdouble) 0.05,
-                (GLdouble) 2.8,
+                (GLdouble) 1.5,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
 
-
+	
 }
 
 //draw scale factor
@@ -150,3 +152,5 @@ void drawScale()
 
 	glPopMatrix();
 }
+
+#endif

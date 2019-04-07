@@ -1,3 +1,5 @@
+#ifndef RESHAPE_CPP
+#define RESHAPE_CPP
 
 #include "openGl.h"
 //reshape function given by Dr. Pounds
@@ -10,3 +12,4 @@ void reshape (int w, int h)
    glMatrixMode(GL_MODELVIEW);
 }
 
+#endif

@@ -1,4 +1,9 @@
-//global variable declarations
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+#include "Camera.h"
+#include <iostream>
+#include <vector>
 extern const int WINDOW_HEIGHT;
 extern const int VIEWPORT_POS;
 extern int frame;
@@ -11,5 +16,6 @@ extern double period;
 extern double prevOmega;
 extern long int fpp;
 extern float desiredFR;
-extern float CAM_A, CAM_B, CAM_C;
-extern float CENTER_X, CENTER_Y, CENTER_Z;
+extern Camera camera;
+extern std::vector<GLuint> textures;
+#endif
