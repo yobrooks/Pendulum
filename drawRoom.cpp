@@ -1,52 +1,11 @@
+#ifndef DRAWROOM_CPP
+#define DRAWROOM_CPP
+
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
 #include <iostream>
 
-
-void drawLeg()
-{
-	glColor3f(0.3, 0.2, 0.0);
-	glScalef(0.5, 0.5, 3.0);
-	glutWireCube(1.0);
-}
-
-void drawTable()
-{
-	//draw base of table
-	glPushMatrix();
-	glScalef(5.0, 10.0, 1.0);
-	glTranslatef(-0.5, 0.0, -3.5);
-	glColor3f(0.3, 0.2, 0.0);
-	glutWireCube(1.0);
-	glPopMatrix();
-
-
-
-//draw four legs
- glPushMatrix();
-	glTranslatef(-1.0, 3.0, -5.5);
-	drawLeg();
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslatef(-1.0, -4.0, -5.5);
-	drawLeg();
-	glPopMatrix();
-
-	glPushMatrix();	
-	glTranslatef(-6.0, -4.0, -5.5);
-	drawLeg();
-	glPopMatrix();
-
-	glPushMatrix();
-        glTranslatef(-6.0, 3.0, -5.5);
-        drawLeg();
-        glPopMatrix();
-
-
-		
-}
 
 void defineWallsText()
 {
@@ -172,8 +131,4 @@ void drawRoomColor()
 
 
 }
-
-void drawExtras()
-{
-	//TODO: draw dj booth and place to put Studio 54 sign 
-}
+#endif

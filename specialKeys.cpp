@@ -1,6 +1,8 @@
+#ifndef SPECIALKEYS_CPP
+#define SPECIALKEYS_CPP
+
 #include "openGl.h"
 #include "globals.h"
-//#include "Camera.h"
 #include <iostream>
 
 
@@ -38,3 +40,5 @@ void specialKeyboard(int key, int x, int y)
 
 	glutPostRedisplay();*/
 }
+
+#endif

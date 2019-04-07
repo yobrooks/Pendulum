@@ -1,6 +1,11 @@
+#ifndef TEXTURES_CPP
+#define TEXTURES_CPP
+
 #include "openGl.h"
 #include "SOIL.h"
 
+//load texture method to create a texture that will later be stored in a vector
+//returns texture ID for later use
 GLuint loadTexture(const char* fileName)
 {
 	unsigned char* image;
@@ -26,4 +31,4 @@ GLuint loadTexture(const char* fileName)
 	return texID;
 }
 
-
+#endif

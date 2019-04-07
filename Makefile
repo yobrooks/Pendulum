@@ -8,6 +8,7 @@ LDLIBS = -lglut -lGL -lGLU -lGLEW libSOIL.a -lm
 HEADERS = openGl.h globals.h constants.h prototypes.h Camera.h
 OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o sleepFunc.o drawRoom.o specialKeys.o Camera.o textures.o
 
+CFLAGS = 
 debug ?= n
 ifeq ($(debug), y)
 	CFLAGS += -g -DDEBUG

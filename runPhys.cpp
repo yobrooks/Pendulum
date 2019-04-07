@@ -1,3 +1,6 @@
+#ifndef RUNPHYS_CPP
+#define RUNPHYS_CPP
+
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
@@ -13,3 +16,5 @@ void run()
 
    glutPostRedisplay();
 }
+
+#endif

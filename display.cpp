@@ -1,3 +1,6 @@
+#ifndef DISPLAY_CPP
+#define DISPLAY_CPP
+
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
@@ -15,16 +18,9 @@ void display()
 		camera.center[0], camera.center[1], camera.center[2],
 		camera.up[0], camera.up[1], camera.up[2]);
 
-
-	if(desiredFR>0)
-	{
-		drawStand();
-		drawRoomColor();
-		drawSphereColor();
-		glutSwapBuffers();
-	}else{
-		    glEnable(GL_TEXTURE_2D);
-		    glEnable(GL_DEPTH_TEST);
+		#ifdef TEXTURE
+		glEnable(GL_TEXTURE_2D);
+	        glEnable(GL_DEPTH_TEST);
   
     //determines if synch needs to be applied
 //	glutLockFrameRate();
@@ -37,6 +33,13 @@ void display()
 
 	        glDisable(GL_TEXTURE_2D);
    	  	glDisable(GL_DEPTH_TEST);
-	}
-    
+	
+
+		#else
+                drawRoomColor();
+                drawSphereColor();
+                glutSwapBuffers();
+ 		#endif   
 }
+
+#endif

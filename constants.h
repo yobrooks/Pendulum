@@ -1,9 +1,9 @@
-//global variables initial assignment
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
 
-//#include "Camera.h"
+//global variables definition
 #include <math.h>
 
-//int Nstep = 1000000;
 const int WINDOW_HEIGHT = 500;
 const int VIEWPORT_POS = 100;
 int frame = 0;
@@ -17,4 +17,4 @@ double prevOmega = 0;
 long int fpp=0;
 float desiredFR;
 
-
+#endif

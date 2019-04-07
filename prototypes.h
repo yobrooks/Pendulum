@@ -1,3 +1,6 @@
+#ifndef PROTOTYPES_H
+#define PROTOTYPES_H
+
 #include "openGl.h"
 //function prototypes
 void init();
@@ -11,19 +14,15 @@ void findFPS();
 void findPeriod();
 void drawSphereColor();
 void keyboard(unsigned char, int ,int);
-void drawStand();
 void drawString(int x, int y, void *font, const char *string);
 void drawScale();
 void drawPeriod();
 void glutLockFrameRate();
 void askSynch(int, char**);
-void drawTable();
-void drawLeg();
 void defineWallsText();
 void specialKeyboard(int,  int, int);
 void drawRoomColor();
 void drawSphereText();
-
-
 GLuint loadTexture(const char* );
-//Camera camera;
+
+#endif

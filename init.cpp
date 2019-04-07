@@ -1,3 +1,6 @@
+#ifndef INIT_CPP
+#define INIT_CPP
+
 #include "openGl.h"
 #include "globals.h"
 #include "Camera.h"
@@ -5,13 +8,13 @@
 #include <iostream>
 #include <vector>
 
+//initialize vector of textures
 std::vector<GLuint> textures;
 void init(void)
 {
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glLoadIdentity();
-    //Camera camera;  
-    //std::vector<GLuint> textures;
+   	//load textures and put them into vector for later use
     GLuint tex1 = loadTexture("./textures/wall 6.jpg"); textures.push_back(tex1);
     GLuint tex2 = loadTexture("./textures/floor1.jpg"); textures.push_back(tex2);
     GLuint tex3 = loadTexture("./textures/wall 6.jpg"); textures.push_back(tex3);
@@ -20,6 +23,6 @@ void init(void)
     GLuint tex6 = loadTexture("./textures/wall 6.jpg"); textures.push_back(tex6);
     GLuint tex7 = loadTexture("./textures/disco ball.jpg"); textures.push_back(tex7);
     GLuint tex8 = loadTexture("./textures/cord.jpg"); textures.push_back(tex8);
-   // std::vector<GLuint> textures{tex1, tex2, tex3, tex4, tex5, tex6, tex7, tex8};   
 }
 
+#endif

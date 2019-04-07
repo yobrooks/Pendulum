@@ -1,3 +1,6 @@
+#ifndef FRAMERATE_CPP
+#define FRAMERATE_CPP
+
 #include "openGl.h"
 #include "globals.h"
 #include <iostream>
@@ -109,4 +112,4 @@ void drawPeriod()
 	free(b);
 }
 
-
+#endif

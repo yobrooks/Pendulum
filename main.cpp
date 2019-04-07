@@ -1,3 +1,6 @@
+#ifndef MAIN_CPP
+#define MAIN_CPP
+
 #include "openGl.h"
 #include "prototypes.h"
 #include "globals.h"
@@ -7,7 +10,7 @@
 
 int main(int argc, char** argv)
 {
-    askSynch(argc, argv); //figure out if synchonization needed based on command line argument
+    askSynch(argc, argv);
     glutInit(&argc, argv);
     glutInitDisplayMode ( GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH ); 
     glutInitWindowSize (WINDOW_HEIGHT, WINDOW_HEIGHT);
@@ -27,3 +30,4 @@ int main(int argc, char** argv)
     return 0;
 }
 
+#endif
