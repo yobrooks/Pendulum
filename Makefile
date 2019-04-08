@@ -68,6 +68,8 @@ clean:
 
 pristine:
 	rm *.o
+	rm pend
+	rm tags
 	touch *
 
 tags:
