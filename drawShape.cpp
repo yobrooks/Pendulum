@@ -63,11 +63,11 @@ void drawSphereText()
         glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDif);
         glLightfv(GL_LIGHT0, GL_AMBIENT, lightDif);
 
-	glDisable(GL_LIGHTING);
+	
 
-	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDif);
+	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDif);
 	gluSphere(disco, 0.6, 20, 20); //draw sphere
-	glEnable(GL_LIGHTING);
+	//glEnable(GL_LIGHTING);
 	glPopMatrix();
 
 	//draw string

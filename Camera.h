@@ -14,8 +14,8 @@
                 void rotateZ(float num [], float changeZ);
                 void crossProd(float num1 [], float num2 [], float cross[]);
 		void normalize(float num []);
-                void direction();
-
+                void direction(float point []);
+		bool checkForCollisions(float camera[]);
 
 	public:
 		float eye [3];
