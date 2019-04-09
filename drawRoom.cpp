@@ -6,7 +6,7 @@
 #include "globals.h"
 #include <iostream>
 
-GLfloat shineRoom = 80.0;
+GLfloat shineRoom = 5.0;
 void defineWallsText()
 {
 	//ceiling

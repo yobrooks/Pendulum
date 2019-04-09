@@ -10,6 +10,9 @@
 
 //initialize vector of textures
 std::vector<GLuint> textures;
+GLfloat lightPos[] = {5.0, 0.0, 5.0, 1.0};
+GLfloat lightDifOne[] = {0.0, 0.0, 1.0, 1.0};
+GLfloat lightAmbOne[] ={0.0, 0.0, 1.0, 0.6};
 void init(void)
 {
     glClearColor (0.0, 0.0, 0.0, 0.0);
@@ -28,7 +31,12 @@ void init(void)
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	//glEnable(GL_LIGHT1);
+	glEnable(GL_LIGHT1);
+	glLightfv(GL_LIGHT1, GL_POSITION, lightPos);
+        glLightfv(GL_LIGHT1, GL_DIFFUSE, lightDifOne);
+        glLightfv(GL_LIGHT1, GL_AMBIENT, lightAmbOne);
+        glLightfv(GL_LIGHT1, GL_SPECULAR, lightDifOne);
+
 }
 
 #endif

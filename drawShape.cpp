@@ -8,13 +8,13 @@
 #include <iostream>
 
 //draw the untextured pendulum ball and string
-GLfloat lightPos[] = {0.0, 0.0, 2.0, 1.0};
+//GLfloat lightPos[] = {0.0, 0.0, 2.0, 1.0};
 GLfloat lightPos2[] = {0.0, 0.0, 0.0, 1.0};
 GLfloat lightDif [] = {1.0, 0.2, 1.0, 1.0};
 GLfloat lightDif2[] = {0.0, 0.0, 1.0, 1.0};
 GLfloat lightAmb[] ={1.0, 0.2, 1.0, 0.6};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat shine = 80.0;
+GLfloat shine = 5.0;
 void drawSphereColor()
 {
 	glDisable(GL_LIGHTING);

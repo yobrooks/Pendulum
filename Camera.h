@@ -28,6 +28,10 @@
 		void moveRight(float delta);
 		void moveUp(float delta);
 		void moveDown(float delta);
+		void panLeft(float delta);
+		void panRight(float delta);
+		void panUp(float delta);
+		void panDown(float delta);
 		void returnOriginal();
 		
 };
