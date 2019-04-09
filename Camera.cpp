@@ -75,32 +75,29 @@
 			float temp [3];
 			std::copy(camera, camera+3, temp);
 		//changes negative cooridnate to positive
-		if(temp[0] < 0)
+		for(int i = 0; i < 3; i++)
 		{
-			temp[0] = temp[0] * (-1.0);
-		}
-
-		if(temp[1] < 0.0)
-		{
-			temp[1] = temp[1] * (-1.0);
-		}
-
-		//if the camera's z position is between -6 and 4 then move on to next check point
-		if(temp[2] > -6.0 && temp[2] < 4.0)
-		{
-			//if camera's x or y values have a distance less than 0.5 to 15 then return true
-			if((11.0 - temp[0]) < 0.5 || (11.0 - temp[1]) <0.5)
+			if(temp[i] <0.0)
 			{
-				return true;
-			}
-			//else if camera's x or y distance to 15 is greater than 0.5 return false
-			else{ 
-				return false;
+				temp[i] = temp[i] * (-1.0);
 			}
 		}
-		else{ 
+		//if the camera's z position is between -6 and 4 then move on to next check point
+		if(5.5 - temp[2] > 0.5)
+		{
 			return true;
 		}
+		if(3.5 - temp[2] < 0.5)
+		{
+			return true;
+		}
+		//if camera's x or y values have a distance less than 0.5 to 15 then return true
+		if((11.0 - temp[0]) < 0.5 || (11.0 - temp[1]) <0.5)
+		{
+			return true;
+		}
+		else	//else if camera's x or y distance to 15 is greater than 0.5 return false
+			return false;
 	}
 
 	//function to compute the forward direction vector of the camera
@@ -200,15 +197,33 @@
 	//function to move camera position up
 	void Camera::moveUp(float delta)
 	{
-		eye[2] = eye[2] + delta;
+		float temp [3];
+                std::copy(eye, eye+3, temp);
+			
+		temp[2] = temp[2] + delta;
 		center[2] = center[2] + delta;
+
+		 if(checkForCollisions(temp) == false)
+                {
+                        std::copy(temp, temp+3, eye);
+                }
+
 	}
 
 	//function to move camera position down
 	void Camera::moveDown(float delta)
 	{
-		eye[2] = eye[2] - delta;
+		float temp [3];
+                std::copy(eye, eye+3, temp);
+
+		temp[2] = temp[2] - delta;
 		center[2] = center[2] -delta;
+
+		 if(checkForCollisions(temp) == false)
+                {
+                        std::copy(temp, temp+3, eye);
+                }
+
 	}
 	
 	//pan camera left 
