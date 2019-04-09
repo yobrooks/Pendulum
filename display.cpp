@@ -17,7 +17,7 @@ void display()
       gluLookAt(camera.eye[0], camera.eye[1], camera.eye[2],
 		camera.center[0], camera.center[1], camera.center[2],
 		camera.up[0], camera.up[1], camera.up[2]);
-	std::cout << camera.eye[0] << " " <<camera.eye[1] << " " <<camera.eye[2] << std::endl;
+//	std::cout << camera.eye[0] << " " <<camera.eye[1] << " " <<camera.eye[2] << std::endl;
 		#ifdef TEXTURE
 		glEnable(GL_TEXTURE_2D);
 	        glEnable(GL_DEPTH_TEST);

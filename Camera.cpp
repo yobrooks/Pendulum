@@ -75,7 +75,7 @@
 			float temp [3];
 			std::copy(camera, camera+3, temp);
 		//changes negative cooridnate to positive
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < 2; i++)
 		{
 			if(temp[i] <0.0)
 			{
@@ -83,21 +83,24 @@
 			}
 		}
 		//if the camera's z position is between -6 and 4 then move on to next check point
-		if(5.5 - temp[2] > 0.5)
+		
+		if(temp[2] > -6.0 && temp[2] < 4.0)
 		{
-			return true;
-		}
-		if(3.5 - temp[2] < 0.5)
-		{
-			return true;
-		}
-		//if camera's x or y values have a distance less than 0.5 to 15 then return true
+
 		if((11.0 - temp[0]) < 0.5 || (11.0 - temp[1]) <0.5)
-		{
+			{
+				return true;
+			}
+		else{ 
+				return false;
+			}
+		}
+		
+		else{ 
 			return true;
 		}
-		else	//else if camera's x or y distance to 15 is greater than 0.5 return false
-			return false;
+	
+
 	}
 
 	//function to compute the forward direction vector of the camera

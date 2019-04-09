@@ -24,7 +24,7 @@ void defineWallsText()
 	//floor
 	 glBindTexture(GL_TEXTURE_2D, textures[1]);
 	glPushMatrix();
-	 glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shineRoom);
+	// glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shineRoom);
 	glBegin(GL_POLYGON);
                 glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, -6.0);
                 glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, -6.0);
