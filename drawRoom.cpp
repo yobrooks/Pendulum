@@ -6,13 +6,17 @@
 #include "globals.h"
 #include <iostream>
 
-GLfloat shineRoom = 5.0;
+GLfloat blueRoom [] = {0.0, 0.0, 0.1, 0.5};
+GLfloat whiteRoom [] = {1.0, 1.0, 1.0, 1.0};
+GLfloat shineRoom = 75.0;
 void defineWallsText()
 {
 	//ceiling
 	
 	glBindTexture(GL_TEXTURE_2D, textures[0]);
 	glPushMatrix();
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, whiteRoom);
+        glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, blueRoom);
 	glBegin(GL_POLYGON);
 		glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, 4.0);
 		glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, 4.0);
@@ -24,7 +28,7 @@ void defineWallsText()
 	//floor
 	 glBindTexture(GL_TEXTURE_2D, textures[1]);
 	glPushMatrix();
-	// glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shineRoom);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shineRoom);
 	glBegin(GL_POLYGON);
                 glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, -15.0, -6.0);
                 glTexCoord2d(1.0, 0.0); glVertex3d(-15.0, 15.0, -6.0);
@@ -34,7 +38,7 @@ void defineWallsText()
 	glPopMatrix();
 
 	//front face
-	 glBindTexture(GL_TEXTURE_2D, textures[2]);
+	 glBindTexture(GL_TEXTURE_2D, textures[0]);
 	glPushMatrix();
 	glBegin(GL_POLYGON);
 		glTexCoord2d(0.0, 0.0); glVertex3d(15.0, -15.0, 4.0);
@@ -45,7 +49,7 @@ void defineWallsText()
 	glPopMatrix();
 
 	//back side
-	 glBindTexture(GL_TEXTURE_2D, textures[3]);
+	 glBindTexture(GL_TEXTURE_2D, textures[2]);
        	glPushMatrix();
 	 glBegin(GL_POLYGON);
             		glTexCoord2d(0.0, 0.0);	   glVertex3d(-15.0, -15.0, -6.0);
@@ -57,7 +61,7 @@ void defineWallsText()
 	
 
 	//right side
-	 glBindTexture(GL_TEXTURE_2D, textures[4]);
+	 glBindTexture(GL_TEXTURE_2D, textures[0]);
     	glPushMatrix();
 	    glBegin(GL_POLYGON);
                glTexCoord2d(0.0, 0.0); glVertex3d(-15.0, 15.0, 4.0);
@@ -67,7 +71,7 @@ void defineWallsText()
         glEnd();
 	glPopMatrix();
 	//left side
-	 glBindTexture(GL_TEXTURE_2D, textures[5]);
+	 glBindTexture(GL_TEXTURE_2D, textures[0]);
 	glPushMatrix();
         glBegin(GL_POLYGON);
                glTexCoord2d(0.0, 0.0);  glVertex3d(-15.0, -15.0, -6.0);

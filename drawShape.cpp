@@ -11,10 +11,10 @@
 //GLfloat lightPos[] = {0.0, 0.0, 2.0, 1.0};
 GLfloat lightPos2[] = {0.0, 0.0, 0.0, 1.0};
 GLfloat lightDif [] = {1.0, 0.2, 1.0, 1.0};
-GLfloat lightDif2[] = {0.0, 0.0, 1.0, 1.0};
 GLfloat lightAmb[] ={1.0, 0.2, 1.0, 0.6};
+GLfloat lightDifTwo[] = {0.0, 0.0, 1.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat shine = 5.0;
+GLfloat shine = 100.0;
 void drawSphereColor()
 {
 	glDisable(GL_LIGHTING);
@@ -52,13 +52,9 @@ void drawSphereColor()
 //draw the sphere and string textured version
 void drawSphereText()
 {
-/*	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-        glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDif);
-        glLightfv(GL_LIGHT0, GL_AMBIENT, lightDif);
-	glLightfv(GL_LIGHT0, GL_SPECULAR, lightDif);*/
 
 	//draw ball
-	glBindTexture(GL_TEXTURE_2D, textures[6]);
+	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	GLUquadric *disco;
 	disco = gluNewQuadric();
 	gluQuadricTexture(disco, GL_TRUE);
@@ -77,12 +73,12 @@ void drawSphereText()
 
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
-	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDif2);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDif);
 	gluSphere(disco, 0.6, 20, 20); //draw sphere
 	glPopMatrix();
 
 	//draw string
-	glBindTexture(GL_TEXTURE_2D, textures[7]);
+	glBindTexture(GL_TEXTURE_2D, textures[4]);
 	GLUquadric *cord;
 	cord = gluNewQuadric();
 	gluQuadricTexture(cord, GL_TRUE);
