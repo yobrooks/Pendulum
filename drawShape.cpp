@@ -60,9 +60,9 @@ void drawSphereText()
 	gluQuadricTexture(disco, GL_TRUE);
 	glPushMatrix();
 	glTranslated(5.0, 0.0, 2.0);
-       /* glTranslated(0.0,0.0, 2.0);
+        glTranslated(0.0,0.0, 2.0);
         glRotated((double)180*theta/M_PI, 0, 1, 0);
-        glTranslated(0.0,0.0,-2.0);*/
+        glTranslated(0.0,0.0,-2.0);
 
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos2);
         glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDif);
@@ -84,9 +84,9 @@ void drawSphereText()
 	gluQuadricTexture(cord, GL_TRUE);
 	glPushMatrix();
         glTranslated(5.0, 0.0, 2.5);
-      /*  glTranslated(0.0, 0.0, 2.0); //swings with the ball
+        glTranslated(0.0, 0.0, 2.0); //swings with the ball
         glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
-        glTranslated(0.0, 0.0, -2.0);*/
+        glTranslated(0.0, 0.0, -2.0);
         glColor3f(1.0, 1.0, 1.0);
         gluCylinder(cord,
                 (GLdouble) 0.05,
