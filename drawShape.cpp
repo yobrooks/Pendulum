@@ -8,11 +8,19 @@
 #include <iostream>
 
 //draw the untextured pendulum ball and string
+//GLfloat lightPos[] = {0.0, 0.0, 2.0, 1.0};
+GLfloat lightPos2[] = {0.0, 0.0, 0.0, 1.0};
+GLfloat lightDif [] = {1.0, 0.2, 1.0, 1.0};
+GLfloat lightAmb[] ={1.0, 0.2, 1.0, 0.6};
+GLfloat lightDifTwo[] = {0.0, 0.0, 1.0, 1.0};
+GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
+GLfloat shine = 100.0;
 void drawSphereColor()
 {
+	glDisable(GL_LIGHTING);
 	//string
 	glPushMatrix();
-        glTranslated(0.0, 0.0, 2.5);
+        glTranslated(5.0, 0.0, 2.5);
         glTranslated(0.0, 0.0, 2.0);
         glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
         glTranslated(0.0, 0.0, -2.0);
@@ -27,7 +35,7 @@ void drawSphereColor()
 
 	//ball
        glPushMatrix();
-       glTranslated(0.0, 0.0, 2.0);
+       glTranslated(5.0, 0.0, 2.0);
        glTranslated(0.0,0.0, 2.0);
        glRotated((double)180*theta/M_PI, 0, 1, 0);
        glTranslated(0.0,0.0,-2.0);
@@ -46,25 +54,36 @@ void drawSphereText()
 {
 
 	//draw ball
-	glBindTexture(GL_TEXTURE_2D, textures[6]);
+	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	GLUquadric *disco;
 	disco = gluNewQuadric();
 	gluQuadricTexture(disco, GL_TRUE);
 	glPushMatrix();
-	glTranslated(0.0, 0.0, 2.0);
+	glTranslated(5.0, 0.0, 2.0);
         glTranslated(0.0,0.0, 2.0);
         glRotated((double)180*theta/M_PI, 0, 1, 0);
         glTranslated(0.0,0.0,-2.0);
-	gluSphere(disco, 0.6, 20, 20);
+
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPos2);
+        glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDif);
+        glLightfv(GL_LIGHT0, GL_AMBIENT, lightAmb);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, lightDif);
+
+	
+
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDif);
+	gluSphere(disco, 0.6, 20, 20); //draw sphere
 	glPopMatrix();
 
 	//draw string
-	glBindTexture(GL_TEXTURE_2D, textures[7]);
+	glBindTexture(GL_TEXTURE_2D, textures[4]);
 	GLUquadric *cord;
 	cord = gluNewQuadric();
 	gluQuadricTexture(cord, GL_TRUE);
 	glPushMatrix();
-        glTranslated(0.0, 0.0, 2.5);
+        glTranslated(5.0, 0.0, 2.5);
         glTranslated(0.0, 0.0, 2.0); //swings with the ball
         glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
         glTranslated(0.0, 0.0, -2.0);
@@ -75,7 +94,6 @@ void drawSphereText()
                 (GLdouble) 1.5,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
-
 	
 }
 
