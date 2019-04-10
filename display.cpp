@@ -17,7 +17,7 @@ void display()
       gluLookAt(camera.eye[0], camera.eye[1], camera.eye[2],
 		camera.center[0], camera.center[1], camera.center[2],
 		camera.up[0], camera.up[1], camera.up[2]);
-	std::cout << camera.center[0] << " " <<camera.center[1] << " " <<camera.center[2] << std::endl;
+	//std::cout << camera.center[0] << " " <<camera.center[1] << " " <<camera.center[2] << std::endl;
 		/*if(camera.center[2] < -6.0 || camera.center[2] > 4.0)
 		{
 			std::cout << "yes collision" << std::endl;
