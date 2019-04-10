@@ -15,7 +15,7 @@
                 void crossProd(float num1 [], float num2 [], float cross[]);
 		void normalize(float num []);
                 void direction(float point []);
-		bool checkForCollisions(float camera[]);
+		bool checkForCollisions(float colEye[], float colCen[]);
 
 	public:
 		float eye [3];

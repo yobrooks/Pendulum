@@ -70,37 +70,42 @@
 	
 		//function to check for collisions
 		//returns true if there is a collision and false if there is not
-		bool Camera::checkForCollisions(float camera[])
+		bool Camera::checkForCollisions(float colEye[], float colCen[])
 		{
-			float temp [3];
-			std::copy(camera, camera+3, temp);
+			float tempEye[3]; float tempCenter[3];
+			std::copy(colEye, colEye+3, tempEye); std::copy(colCen, colCen+3, tempCenter);
+			bool result = false;
 		//changes negative cooridnate to positive
 		for(int i = 0; i < 2; i++)
 		{
-			if(temp[i] <0.0)
+			if(tempEye[i] <0.0)
 			{
-				temp[i] = temp[i] * (-1.0);
+				tempEye[i] = tempEye[i] * (-1.0);
 			}
 		}
 		//if the camera's z position is between -6 and 4 then move on to next check point
-		
-		if(temp[2] > -6.0 && temp[2] < 4.0)
+		if(tempCenter[2] <= -5.6 || tempCenter[2] >= 3.6)
 		{
 
-		if((11.0 - temp[0]) < 0.5 || (11.0 - temp[1]) <0.5)
+			/*if((11.0 - tempEye[0]) < 0.5 || (11.0 - tempEye[1]) <0.5)
 			{
-				return true;
+				result =  true;
 			}
-		else{ 
-				return false;
-			}
+			else{ 
+				result = false;
+			    }*/
+			result = true;
+		}else{
+			if((11.0 - tempEye[0]) < 0.5 || (11.0 - tempEye[1]) <0.5)
+                        {
+                                result =  true;
+                        }
+                        else{
+                                result = false;
+                            }
 		}
-		
-		else{ 
-			return true;
-		}
-	
-
+		std::cout << result << std::endl;
+		return result;	
 	}
 
 	//function to compute the forward direction vector of the camera
@@ -118,7 +123,7 @@
 	//function to move camera position forward
 	void Camera::moveForward(float delta)
 	{
-		float temp [3];
+	/*	float temp [3];
 		std::copy(eye, eye+3, temp);	
 		direction(temp);
 		temp[0] = temp[0] + forward[0]  * delta;
@@ -131,13 +136,13 @@
 		if(checkForCollisions(temp) == false)
 		{
 			std::copy(temp, temp+3, eye);
-		}	
+		}	*/
 	}
 	
 	//function to move camera positino backwards
 	void Camera::moveBackward(float delta)
 	{
-		float temp [3];
+		/*float temp [3];
 		std::copy(eye, eye+3, temp);
 		direction(temp);
 		temp[0] = temp[0] - forward[0]  * delta;
@@ -150,28 +155,29 @@
 		if(checkForCollisions(temp) == false)
                 {
                         std::copy(temp, temp+3, eye);
-                }
+                }*/
 	}
 
 	//functino to move camera position left
 	void Camera:: moveLeft(float delta)
 	{
-		float temp [3];
-		std::copy(eye, eye+3, temp);
-		direction(temp);
+		float tempEye [3]; float tempCenter[3];
+		std::copy(eye, eye+3, tempEye); std::copy(center, center+3, tempCenter);
+		direction(tempEye);
 		float result [3];
 		crossProd(up, forward, result);	
 		
-		temp[0] = temp[0] + result[0] * -delta;
-		temp[1] = temp[1] + result[1] * -delta;
-		temp[2] = temp[2] + result[2] * -delta;
-		center[0] = center[0] + result[0] * -delta;
-		center[1] = center[1] + result[1] * -delta;
-		center[2] = center[2] + result[2] * -delta;
+		tempEye[0] = tempEye[0] + result[0] * delta;
+		tempEye[1] = tempEye[1] + result[1] * delta;
+		tempEye[2] = tempEye[2] + result[2] * delta;
+		tempCenter[0] = tempCenter[0] + result[0] * delta;
+		tempCenter[1] = tempCenter[1] + result[1] * delta;
+		tempCenter[2] = tempCenter[2] + result[2] * delta;
 
-		if(checkForCollisions(temp) == false)
+		if(checkForCollisions(tempEye, tempCenter) == false)
                 {
-                        std::copy(temp, temp+3, eye);
+                        std::copy(tempEye, tempEye+3, eye);
+			std::copy(tempCenter, tempCenter+3, center);
                 }
 	}
 
@@ -179,7 +185,27 @@
 	//function to move camera position right
 	void Camera::moveRight(float delta)
 	{
-		float temp [3];
+		float tempEye [3]; float tempCenter[3];
+                std::copy(eye, eye+3, tempEye); std::copy(center, center+3, tempCenter);
+                direction(tempEye);
+                float result [3];
+                crossProd(up, forward, result);
+
+                tempEye[0] = tempEye[0] - result[0] * delta;
+                tempEye[1] = tempEye[1] - result[1] * delta;
+                tempEye[2] = tempEye[2] - result[2] * delta;
+                tempCenter[0] = tempCenter[0] - result[0] * delta;
+                tempCenter[1] = tempCenter[1] - result[1] * delta;
+                tempCenter[2] = tempCenter[2] - result[2] * delta;
+
+                if(checkForCollisions(tempEye, tempCenter) == false)
+                {
+                        std::copy(tempEye, tempEye+3, eye);
+                        std::copy(tempCenter, tempCenter+3, center);
+                }
+
+		
+		/*float temp [3];
 		std::copy(eye, eye+3, temp);
 		direction(temp);
                 float result [3];
@@ -194,13 +220,28 @@
 		if(checkForCollisions(temp) == false)
                 {
                         std::copy(temp, temp+3, eye);
-                }
+                }*/
 	}
 
 	//function to move camera position up
 	void Camera::moveUp(float delta)
 	{
-		float temp [3];
+		float tempEye [3]; float tempCenter[3];
+                std::copy(eye, eye+3, tempEye); std::copy(center, center+3, tempCenter);
+                direction(tempEye);
+                float result [3];
+                crossProd(up, forward, result);
+
+                tempEye[2] = tempEye[2] + delta;
+                tempCenter[2] = tempCenter[2] + delta;
+		
+                if(checkForCollisions(tempEye, tempCenter) == false)
+                {
+                        std::copy(tempEye, tempEye+3, eye);
+                        std::copy(tempCenter, tempCenter+3, center);
+                }
+
+	/*	float temp [3];
                 std::copy(eye, eye+3, temp);
 			
 		temp[2] = temp[2] + delta;
@@ -209,14 +250,14 @@
 		 if(checkForCollisions(temp) == false)
                 {
                         std::copy(temp, temp+3, eye);
-                }
+                }*/
 
 	}
 
 	//function to move camera position down
 	void Camera::moveDown(float delta)
 	{
-		float temp [3];
+		/*float temp [3];
                 std::copy(eye, eye+3, temp);
 
 		temp[2] = temp[2] - delta;
@@ -225,7 +266,23 @@
 		 if(checkForCollisions(temp) == false)
                 {
                         std::copy(temp, temp+3, eye);
+                }*/
+
+		float tempEye [3]; float tempCenter[3];
+                std::copy(eye, eye+3, tempEye); std::copy(center, center+3, tempCenter);
+                direction(tempEye);
+                float result [3];
+                crossProd(up, forward, result);
+
+                tempEye[2] = tempEye[2] - delta;
+                tempCenter[2] = tempCenter[2] - delta;
+
+                if(checkForCollisions(tempEye, tempCenter) == false)
+                {
+                        std::copy(tempEye, tempEye+3, eye);
+                        std::copy(tempCenter, tempCenter+3, center);
                 }
+
 
 	}
 	
