@@ -13,7 +13,7 @@ GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat shine = 100.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
 GLfloat spotPos [] = {5.5, 5.0, 2.5, 1.0};
-GLfloat spotLight [] = {1.0, 1.0, 1.0, 1.0};
+GLfloat spotLight [] = {1.0, 1.0, 0.0, 0.0};
 GLfloat direction [] = {0.0, -1.0, 0.0};
 void drawSphereColor()
 {
@@ -77,9 +77,9 @@ void drawSphereText()
         glRotated((double)180*theta/M_PI, 0, 1, 0);
         glTranslated(0.0,0.0,-2.0);
 
-	/*glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
-	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);*/
+	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);
 	gluSphere(disco, 0.6, 40, 40); //draw sphere
 	glPopMatrix();
 
