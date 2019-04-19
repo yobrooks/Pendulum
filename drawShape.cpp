@@ -11,9 +11,10 @@
 GLfloat lightDifTwo[] = {1.0, 0.2, 1.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat shine = 100.0;
-GLfloat spotPos [] = {5.0, 0.0, 2.5, 1.0};
-GLfloat spotLight [] = {0.0, 5.0, 0.0, 1.0};
-GLfloat direction [] = {0.0, -1.0, -1.0};
+GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
+GLfloat spotPos [] = {5.5, 5.0, 2.5, 1.0};
+GLfloat spotLight [] = {1.0, 1.0, 1.0, 1.0};
+GLfloat direction [] = {0.0, -1.0, 0.0};
 void drawSphereColor()
 {
 	glDisable(GL_LIGHTING);
@@ -48,12 +49,12 @@ void drawSphereColor()
 
 void setSpotlight()
 {
-   glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 15.0);
+   glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 20.0);
    glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 30.0);
    glLightf(GL_LIGHT3, GL_LINEAR_ATTENUATION, 0.0);
 
    glLightfv(GL_LIGHT3, GL_POSITION, spotPos);
-   glLightfv(GL_LIGHT3, GL_AMBIENT, spotLight);
+   glLightfv(GL_LIGHT3, GL_AMBIENT, black);
    glLightfv(GL_LIGHT3, GL_DIFFUSE, spotLight);
    glLightfv(GL_LIGHT3, GL_SPECULAR, spotLight);
 
@@ -76,10 +77,10 @@ void drawSphereText()
         glRotated((double)180*theta/M_PI, 0, 1, 0);
         glTranslated(0.0,0.0,-2.0);
 
-/*	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
+	/*glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);*/
-	gluSphere(disco, 0.6, 20, 20); //draw sphere
+	gluSphere(disco, 0.6, 40, 40); //draw sphere
 	glPopMatrix();
 
 	//draw string
