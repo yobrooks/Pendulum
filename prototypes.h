@@ -26,5 +26,5 @@ void drawSphereText();
 void setSpotlight();
 void drawGraphScreen();
 GLuint loadTexture(const char* );
-
+void drawAxes(int );
 #endif
