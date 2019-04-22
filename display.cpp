@@ -9,6 +9,7 @@
 #include "Camera.h"
 #include <vector>
 Camera camera;
+bool graphOn = false;
 void display()
 {
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
@@ -30,11 +31,17 @@ void display()
 	        glEnable(GL_DEPTH_TEST);
   
     //determines if synch needs to be applied
-//	glutLockFrameRate();
+	//	glutLockFrameRate();
 
 		
 		drawSphereText();
 		defineWallsText();
+		drawPeriod();
+		if(graphOn == true)
+                {
+                        drawGraphScreen();
+                }
+		
 
    		glutSwapBuffers();
 

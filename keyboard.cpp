@@ -17,6 +17,16 @@ void keyboard(unsigned char key, int x, int y)
 		case 'a' : camera.moveLeft(1.0); glutPostRedisplay(); break;
 		case 's' : camera.moveBackward(1.0); glutPostRedisplay(); break;
 		case 'd' : camera.moveRight(1.0); glutPostRedisplay(); break;
+		case 'g' : 
+			 if(graphOn ==true) 
+			{ 
+				graphOn = false;
+			} 
+			else {
+				graphOn = true;
+			}
+			glutPostRedisplay();
+			break;
 	}
 
 }

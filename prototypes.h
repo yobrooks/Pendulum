@@ -24,6 +24,7 @@ void specialKeyboard(int,  int, int);
 void drawRoomColor();
 void drawSphereText();
 void setSpotlight();
+void drawGraphScreen();
 GLuint loadTexture(const char* );
 
 #endif

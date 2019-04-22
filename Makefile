@@ -6,7 +6,7 @@
 CXX = g++
 LDLIBS = -lglut -lGL -lGLU -lGLEW libSOIL.a -lm
 HEADERS = openGl.h globals.h constants.h prototypes.h Camera.h
-OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o sleepFunc.o drawRoom.o specialKeys.o Camera.o textures.o
+OBJS = init.o display.o pendMath.o runPhys.o reshape.o frameRate.o drawShape.o keyboard.o sleepFunc.o drawRoom.o specialKeys.o Camera.o textures.o graph.o
 
 CFLAGS = 
 debug ?= n
@@ -62,6 +62,11 @@ Camera.o : Camera.cpp $(HEADERS)
 
 textures.o : textures.cpp $(HEADERS)
 	$(CXX) $(CFLAGS) textures.cpp -c
+
+graph.o : graph.cpp $(HEADERS)
+	$(CXX) $(CFLAGS) graph.cpp -c
+
+
 
 clean:
 	rm *.o

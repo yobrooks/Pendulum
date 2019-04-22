@@ -19,5 +19,5 @@ extern long int fpp;
 extern float desiredFR;
 extern Camera camera;
 extern std::vector<GLuint> textures;
-
+extern bool graphOn;
 #endif
