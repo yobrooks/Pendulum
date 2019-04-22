@@ -16,6 +16,7 @@
 
 void drawGraphScreen()
 {
+	glDisable(GL_LIGHTING);
 	glMatrixMode(GL_PROJECTION);
         glPushMatrix();
         glLoadIdentity();
@@ -24,7 +25,6 @@ void drawGraphScreen()
         glMatrixMode(GL_MODELVIEW);
         glPushMatrix();
         glLoadIdentity();
-	
 	glColor3f(1.0, 1.0, 1.0);	
 	glBegin(GL_POLYGON);
 		glVertex2i(WINDOW_HEIGHT*.7, WINDOW_HEIGHT*.4);
@@ -32,14 +32,14 @@ void drawGraphScreen()
 		glVertex2i(WINDOW_HEIGHT, 0);
 		glVertex2i(WINDOW_HEIGHT, WINDOW_HEIGHT*0.4);
 	glEnd();
-
-       
         //drawString(50, 100, GLUT_BITMAP_HELVETICA_12, charString);
 
         glPopMatrix();
         glMatrixMode(GL_PROJECTION);
         glPopMatrix();
         glMatrixMode(GL_MODELVIEW);
+
+	glEnable(GL_LIGHTING);
 }
 
 #endif

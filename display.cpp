@@ -36,7 +36,7 @@ void display()
 		
 		drawSphereText();
 		defineWallsText();
-		drawPeriod();
+		//drawPeriod();
 		if(graphOn == true)
                 {
                         drawGraphScreen();
