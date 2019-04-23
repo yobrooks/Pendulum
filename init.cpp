@@ -28,9 +28,9 @@ void init(void)
 
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHT1);
-	glEnable(GL_LIGHT2);
+//	glEnable(GL_LIGHT0);
+//	glEnable(GL_LIGHT1);
+//	glEnable(GL_LIGHT2);
 
 	glLightfv(GL_LIGHT1, GL_POSITION, lightPosOne);
         glLightfv(GL_LIGHT1, GL_DIFFUSE, lightDifOne);
