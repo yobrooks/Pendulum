@@ -17,18 +17,19 @@
 void drawAxes(int length)
 {
         glPointSize(1.0);
-        glColor3f(0.0, 0.0, 0.0);
+        glColor3f(0.0, 0.0, 1.0);
 	glPushMatrix();
-	glTranslatef((float)WINDOW_HEIGHT*0.71, (float)WINDOW_HEIGHT*0.39, 0.0);
+//	glTranslatef((float)WINDOW_HEIGHT*0.71, (float)WINDOW_HEIGHT*0.39, 0.0);
+	//x axis
         glBegin(GL_LINES);
+                glVertex2i(0, 0);
                 glVertex2i(length, 0);
-                glVertex2i(-length, 0);
         glEnd();
 
-        glBegin(GL_LINES);
-                glVertex2i(0, length);
-                glVertex2i(0, -length);
-        glEnd();
+       /* glBegin(GL_LINES);
+                glVertex2i(0, WINDOW_HEIGHT*0.39);
+                glVertex2i(0, WINDOW_HEIGHT*0.49);
+        glEnd();*/
 	glPopMatrix();
 }
 
@@ -43,15 +44,8 @@ void drawGraphScreen()
         glMatrixMode(GL_MODELVIEW);
         glPushMatrix();
         glLoadIdentity();
-
-	 /*glColor3f(0.0, 1.0, 1.0);
-         glBegin(GL_LINES);
-                glVertex2i(700, 50);
-                glVertex2i(700, 100);
-        glEnd();*/
 	
-	drawAxes(5);
-
+	drawAxes(100);
 
 	glColor3f(1.0, 1.0, 1.0);	
 	glBegin(GL_POLYGON);
@@ -61,13 +55,6 @@ void drawGraphScreen()
 		glVertex2i(WINDOW_HEIGHT, WINDOW_HEIGHT*0.4);
 	glEnd();
 
-	 /*glColor3f(0.0, 1.0, 1.0);
-	 glBegin(GL_LINES);
-                glVertex2i(700, 50);
-                glVertex2i(700, 100);
-        glEnd();*/
-
-	//drawAxes(2);
         //drawString(50, 100, GLUT_BITMAP_HELVETICA_12, charString);
 
         glPopMatrix();
