@@ -12,9 +12,48 @@ GLfloat lightDifTwo[] = {1.0, 0.2, 1.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat shine = 100.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
-GLfloat spotPos [] = {5.5, 5.0, 2.5, 1.0};
-GLfloat spotLight [] = {1.0, 1.0, 0.0, 0.0};
-GLfloat direction [] = {0.0, -1.0, 0.0};
+GLfloat spotPos [] = {-5.0, -2.0, 3.5, 1.0};
+GLfloat spotLight [] = {1.0, 1.0, 1.0, 0.0};
+GLfloat direction [] = {5.0, 0.0, -3.0};
+
+/*GLfloat lightPosZero[] = {0.0, 0.0, 4.0, 1.0};
+ * GLfloat lightDifZero[] = {1.0, 0.2, 1.0, 0.7};
+ * GLfloat lightAmbZero[] ={1.0, 0.2, 1.0, 0.3};
+ * GLfloat lightPosOne[] = {5.0, 5.0, 4.0, 1.0};
+ * GLfloat lightPosTwo[] = {5.0, -5.0, 4.0, 1.0};
+ * GLfloat lightDifOne[] = {0.0, 0.0, 1.0, .7};
+ * GLfloat lightAmbOne[] ={0.0, 0.0, 1.0, 0.3};
+ */
+void drawLights()
+{
+/*	glPushMatrix();
+	glTranslatef(0.0, 0.0, 3.0);
+	glutWireSphere(0.5, 20, 20);	
+	glPopMatrix();
+	
+	glPushMatrix();	
+	glTranslatef(5.0, 5.0, 3.0);
+	glutWireSphere(0.5, 20, 20);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(5.0, -5.0, 3.0);
+	glutWireSphere(0.5, 20, 20);
+	glPopMatrix();*/
+
+//spotlight Pos
+	glPushMatrix();
+	glTranslatef(-5.0, -2.0, 3.5);
+	glutWireSphere(0.5, 20, 20);
+	glPopMatrix();
+
+//direction
+	glPushMatrix();
+	glTranslatef(5.0, 0.0, -3.0);
+	glutWireCube(0.5);
+	glPopMatrix();
+}
+
 void drawSphereColor()
 {
 	glDisable(GL_LIGHTING);
@@ -67,6 +106,7 @@ void drawSphereText()
 {
 	setSpotlight();
 	//draw ball
+	drawLights();
 	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	GLUquadric *disco;
 	disco = gluNewQuadric();
@@ -79,7 +119,7 @@ void drawSphereText()
 
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
-	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);
+	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);
 	gluSphere(disco, 0.6, 40, 40); //draw sphere
 	glPopMatrix();
 
@@ -100,6 +140,8 @@ void drawSphereText()
                 (GLdouble) 1.5,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
+
+//	drawLights();
 	
 }
 
