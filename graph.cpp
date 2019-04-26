@@ -17,13 +17,13 @@
 void drawAxes(int length)
 {
         glPointSize(1.0);
-        glColor3f(0.0, 0.0, 1.0);
+        glColor3f(1.0, 0.0, 0.0);
 	glPushMatrix();
-//	glTranslatef((float)WINDOW_HEIGHT*0.71, (float)WINDOW_HEIGHT*0.39, 0.0);
+	glTranslatef((float)WINDOW_HEIGHT*0.71, (float)WINDOW_HEIGHT*0.39, 0.0);
 	//x axis
         glBegin(GL_LINES);
-                glVertex2i(0, 0);
-                glVertex2i(length, 0);
+                glVertex2i(length, -275);
+                glVertex2i(0, -275);
         glEnd();
 
        /* glBegin(GL_LINES);
@@ -45,7 +45,7 @@ void drawGraphScreen()
         glPushMatrix();
         glLoadIdentity();
 	
-	drawAxes(100);
+	drawAxes(225);
 
 	glColor3f(1.0, 1.0, 1.0);	
 	glBegin(GL_POLYGON);
