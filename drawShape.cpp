@@ -12,9 +12,9 @@ GLfloat lightDifTwo[] = {1.0, 0.2, 1.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat shine = 100.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
-GLfloat spotPos [] = {-5.0, -2.0, 3.5, 1.0};
-GLfloat spotLight [] = {1.0, 1.0, 1.0, 0.0};
-GLfloat direction [] = {5.0, 0.0, -3.0};
+GLfloat spotPos [] = {-3.0, 0.0, 4.0, 1.0};
+GLfloat spotLight [] = {0.0, 1.0, 0.0, 1.0};
+GLfloat direction [] = {6.0, 0.0, -2.0};
 
 /*GLfloat lightPosZero[] = {0.0, 0.0, 4.0, 1.0};
  * GLfloat lightDifZero[] = {1.0, 0.2, 1.0, 0.7};
@@ -42,14 +42,16 @@ void drawLights()
 	glPopMatrix();*/
 
 //spotlight Pos
+	
+	glColor3f(1.0, 0.0, 0.0);
 	glPushMatrix();
-	glTranslatef(-5.0, -2.0, 3.5);
-	glutWireSphere(0.5, 20, 20);
+	glTranslatef(-3.0, 0.0, 4.0);
+	glutSolidSphere(0.5, 20, 20);
 	glPopMatrix();
 
 //direction
 	glPushMatrix();
-	glTranslatef(5.0, 0.0, -3.0);
+	glTranslatef(6.0, 0.0, -2.0);
 	glutWireCube(0.5);
 	glPopMatrix();
 }
@@ -88,7 +90,7 @@ void drawSphereColor()
 
 void setSpotlight()
 {
-   glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 20.0);
+   glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 50.0);
    glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 30.0);
    glLightf(GL_LIGHT3, GL_LINEAR_ATTENUATION, 0.0);
 
@@ -119,7 +121,7 @@ void drawSphereText()
 
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
-	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);
 	gluSphere(disco, 0.6, 40, 40); //draw sphere
 	glPopMatrix();
 
