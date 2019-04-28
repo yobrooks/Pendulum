@@ -38,7 +38,7 @@ void drawPoints()
 	glBegin(GL_POINTS);
 		for(int i = 0; i < gPointsX.size(); i++)
 		{
-			glVertex2d(gPointsX[i]*50+WINDOW_HEIGHT*0.72, gPointsY[i]*50+WINDOW_HEIGHT*0.40);
+			glVertex2d(gPointsX[i]*50+WINDOW_HEIGHT*0.85, gPointsY[i]*50+WINDOW_HEIGHT*0.20);
 		}
 	glEnd();
 	glPopMatrix();
