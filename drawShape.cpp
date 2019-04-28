@@ -9,13 +9,13 @@
 
 //draw the untextured pendulum ball and string
 #ifdef LIGHTING
-GLfloat lightDifPurp[] = {1.0, 0.0, 0.0, 1.0};
+GLfloat lightDifRed[] = {1.0, 0.0, 0.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat shine = 100.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
-GLfloat spotPos [] = {-3.0, 0.0, 4.0, 1.0};
-GLfloat spotLight [] = {0.0, 1.0, 0.0, 1.0};
-GLfloat direction [] = {6.0, 0.0, -2.0};
+GLfloat spotPos [] = {8.0, 0.0, 3.5, 1.0};
+GLfloat spotLight [] = {0.0, 1.0, 1.0, 1.0};
+GLfloat direction [] = {-2.0, 0.0, -1.0};
 #endif
 /*GLfloat lightPosZero[] = {0.0, 0.0, 4.0, 1.0};
  * GLfloat lightDifZero[] = {1.0, 0.2, 1.0, 0.7};
@@ -41,17 +41,17 @@ void drawLights()
 
 //spotlight Pos
 	
-/*	glColor3f(1.0, 0.0, 0.0);
+	glColor3f(1.0, 0.0, 0.0);
 	glPushMatrix();
-	glTranslatef(-3.0, 0.0, 4.0);
-	glutSolidSphere(0.5, 20, 20);
+	glTranslatef(8.0, 0.0, 3.5);
+	glutSolidCube(0.5);
 	glPopMatrix();
 
 //direction
 	glPushMatrix();
-	glTranslatef(6.0, 0.0, -2.0);
+	glTranslatef(5.0, 0.0, -1.0);
 	glutWireCube(0.5);
-	glPopMatrix();*/
+	glPopMatrix();
 }
 
 void drawSphereColor()
@@ -88,23 +88,25 @@ void drawSphereColor()
 
 void setSpotlight()
 {
- /*  glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 50.0);
+   glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 20.0);
    glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 30.0);
    glLightf(GL_LIGHT3, GL_LINEAR_ATTENUATION, 0.0);
 
    glLightfv(GL_LIGHT3, GL_POSITION, spotPos);
    glLightfv(GL_LIGHT3, GL_AMBIENT, black);
-   glLightfv(GL_LIGHT3, GL_DIFFUSE, spotLight);
+   glLightfv(GL_LIGHT3, GL_DIFFUSE,  spotLight);
    glLightfv(GL_LIGHT3, GL_SPECULAR, spotLight);
 
     //direction
    glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, direction);
-*/
+
 }
 //draw the sphere and string textured version
 void drawSphereText()
 {
-//	setSpotlight();
+	setSpotlight();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColorMaterial(GL_FRONT_AND_BACK, GL_SPECULAR);
 	//draw ball
 	drawLights();
 	glBindTexture(GL_TEXTURE_2D, textures[3]);
@@ -118,9 +120,9 @@ void drawSphereText()
         glTranslated(0.0,0.0,-2.0);
 
 	#ifdef LIGHTING
-	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
+//	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
-	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifPurp);
+	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifRed);
 	#endif
 
 	gluSphere(disco, 0.6, 40, 40); //draw sphere

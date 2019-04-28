@@ -11,8 +11,8 @@
 //initialize vector of textures
 std::vector<GLuint> textures;
 //GLfloat lightPosZero[] = {0.0, 0.0, 3.0, 1.0};
-GLfloat lightDifOne[] = {1.0, 0.2, 1.0, 0.7};
-GLfloat lightAmbOne[] = {1.0, 0.2, 1.0, 0.05};
+GLfloat lightDifOne[] = {1.0, 0.0, 0.0, 0.7};
+GLfloat lightAmbOne[] = {1.0, 0.0, 0.0, 0.05};
 GLfloat lightPosOne[] = {0.0, 5.0, 3.5, 1.0};
 GLfloat lightPosTwo[] = {0.0, -5.0, 3.5, 1.0};
 GLfloat lightDifTwo[] = {0.0, 0.0, 1.0, .7};
@@ -35,8 +35,8 @@ void init(void)
 	//enable the lights
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	//glEnable(GL_LIGHT1);
+	//glEnable(GL_LIGHT0);
+//	glEnable(GL_LIGHT1);
 
 	//set properties for light 0
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPosOne);
