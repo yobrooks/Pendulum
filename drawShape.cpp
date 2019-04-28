@@ -8,6 +8,7 @@
 #include <iostream>
 
 //draw the untextured pendulum ball and string
+#ifdef LIGHTING
 GLfloat lightDifTwo[] = {1.0, 0.2, 1.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat shine = 100.0;
@@ -15,7 +16,7 @@ GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
 GLfloat spotPos [] = {-3.0, 0.0, 4.0, 1.0};
 GLfloat spotLight [] = {0.0, 1.0, 0.0, 1.0};
 GLfloat direction [] = {6.0, 0.0, -2.0};
-
+#endif
 /*GLfloat lightPosZero[] = {0.0, 0.0, 4.0, 1.0};
  * GLfloat lightDifZero[] = {1.0, 0.2, 1.0, 0.7};
  * GLfloat lightAmbZero[] ={1.0, 0.2, 1.0, 0.3};
@@ -90,7 +91,7 @@ void drawSphereColor()
 
 void setSpotlight()
 {
-   glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 50.0);
+ /*  glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, 50.0);
    glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, 30.0);
    glLightf(GL_LIGHT3, GL_LINEAR_ATTENUATION, 0.0);
 
@@ -101,14 +102,14 @@ void setSpotlight()
 
     //direction
    glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, direction);
-
+*/
 }
 //draw the sphere and string textured version
 void drawSphereText()
 {
-	setSpotlight();
+//	setSpotlight();
 	//draw ball
-	drawLights();
+//	drawLights();
 	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	GLUquadric *disco;
 	disco = gluNewQuadric();
@@ -119,9 +120,12 @@ void drawSphereText()
         glRotated((double)180*theta/M_PI, 0, 1, 0);
         glTranslated(0.0,0.0,-2.0);
 
+	#ifdef LIGHTING
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);
+	#endif
+
 	gluSphere(disco, 0.6, 40, 40); //draw sphere
 	glPopMatrix();
 

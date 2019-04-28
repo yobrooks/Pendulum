@@ -22,20 +22,22 @@ void init(void)
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glLoadIdentity();
 
+    #ifdef TEXTURE
    	//load textures and put them into vector for later use
     GLuint tex1 = loadTexture("./textures/wall 6.jpg"); textures.push_back(tex1);
     GLuint tex2 = loadTexture("./textures/floor1.jpg"); textures.push_back(tex2);
     GLuint tex3 = loadTexture("./textures/wall 2.jpg"); textures.push_back(tex3);
     GLuint tex4 = loadTexture("./textures/disco ball.jpg"); textures.push_back(tex4);
     GLuint tex5 = loadTexture("./textures/cord.jpg"); textures.push_back(tex5);
+    #endif
 
+	#ifdef LIGHTING
 	//enable the lights
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHT1);
 	glEnable(GL_LIGHT2);
-	//glEnable(GL_LIGHT3);
 
 	//set properties for light 0
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPosZero);
@@ -54,11 +56,9 @@ void init(void)
         glLightfv(GL_LIGHT2, GL_DIFFUSE, lightDifOne);
         glLightfv(GL_LIGHT2, GL_AMBIENT, lightAmbOne);
         glLightfv(GL_LIGHT2, GL_SPECULAR, lightDifOne);
+        #endif
 
-
-	//glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-       // glColorMaterial(GL_FRONT_AND_BACK, GL_EMISSION);
-       // glEnable(GL_COLOR_MATERIAL);
+	glEnable(GL_LIGHT3);
 }
 
 #endif
