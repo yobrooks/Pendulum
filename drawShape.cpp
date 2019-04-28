@@ -10,11 +10,11 @@
 //draw the untextured pendulum ball and string
 #ifdef LIGHTING
 GLfloat lightDifRed[] = {1.0, 0.0, 0.0, 1.0};
-GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat shine = 100.0;
+GLfloat white[] = {1.0, 1.0, 1.0, 0.5};
+GLfloat shine = 75.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
 GLfloat spotPos [] = {8.0, 0.0, 3.5, 1.0};
-GLfloat spotLight [] = {0.0, 1.0, 1.0, 1.0};
+GLfloat spotLight [] = {0.0, 1.0, 0.0, 1.0};
 GLfloat direction [] = {-2.0, 0.0, -1.0};
 #endif
 /*GLfloat lightPosZero[] = {0.0, 0.0, 4.0, 1.0};
@@ -120,7 +120,7 @@ void drawSphereText()
         glTranslated(0.0,0.0,-2.0);
 
 	#ifdef LIGHTING
-//	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
 	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifRed);
 	#endif
