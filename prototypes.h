@@ -27,4 +27,5 @@ void setSpotlight();
 void drawGraphScreen();
 GLuint loadTexture(const char* );
 void drawAxes(int );
+void updatePoints(double, double);
 #endif

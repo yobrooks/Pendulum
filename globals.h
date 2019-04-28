@@ -20,4 +20,6 @@ extern float desiredFR;
 extern Camera camera;
 extern std::vector<GLuint> textures;
 extern bool graphOn;
+extern std::vector<double> gPointsX;
+extern std::vector<double> gPointsY;
 #endif

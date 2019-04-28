@@ -6,6 +6,44 @@
 #include "globals.h"
 #include <string.h>
 #include <stdio.h>
+
+int count = 0;
+std::vector<double> gPointsX;
+std::vector<double> gPointsY;
+void updatePoints(double ptheta, double pomega)
+{
+
+     if(gPointsX.size() < 2000 && gPointsY.size() < 2000)
+     {
+	gPointsX.push_back(ptheta);
+     	gPointsY.push_back(pomega);
+     }
+     else{
+	    gPointsX[count%2000] = ptheta;
+	    gPointsY[count%2000] = pomega;
+	 }
+
+        count++;
+	
+	if(count == 2000)
+	{
+		count = 0;
+	}
+}
+
+void drawPoints()
+{
+	glPushMatrix();
+	glColor3f(1.0, 0.2, 1.0);
+	glBegin(GL_POINTS);
+		for(int i = 0; i < gPointsX.size(); i++)
+		{
+			glVertex2d(gPointsX[i]*50+WINDOW_HEIGHT*0.72, gPointsY[i]*50+WINDOW_HEIGHT*0.40);
+		}
+	glEnd();
+	glPopMatrix();
+}
+
 void drawAxesLabels()
 {
 /*	#ifdef LIGHTING
@@ -15,7 +53,7 @@ void drawAxesLabels()
 	char *x = (char*) malloc(12*sizeof(char));
         char *y = (char*) malloc(12*sizeof(char));
 
-	sprintf(x, "tetha");
+	sprintf(x, "theta");
         sprintf(y, "d(theta)/dt");
 
 	glColor3f(0.0, 0.0, 0.0);
@@ -45,6 +83,9 @@ void drawAxes(int length)
         glEnd();
 
 	glPopMatrix();
+
+	drawPoints();
+
 }
 
 void drawGraphScreen()
@@ -79,5 +120,6 @@ void drawGraphScreen()
 
 	glEnable(GL_LIGHTING);
 }
+
 
 #endif

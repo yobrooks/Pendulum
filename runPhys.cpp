@@ -13,8 +13,10 @@ void run()
 {
 
   step( &t, &theta, &omega, &prevOmega);
-
+  updatePoints(theta, omega);	
    glutPostRedisplay();
 }
+
+
 
 #endif

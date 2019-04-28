@@ -5,11 +5,13 @@
 #include "globals.h"
 #include <stdio.h>
 #include <math.h>
-
+#include <vector>
 //functions for the phsyics engine
 //all functions provided by Dr. Pounds
 
 int Nstep = 1000000;
+//:std::vector<double> gPointsX(2000);
+//std::vector<double> gPointsY(2000);
 
 double thetadot(double t, double theta, double omega)
 {
@@ -33,7 +35,6 @@ double omegadot(double t, double theta, double omega)
  return (-g/R*sin(theta)+num)/denom;
 }
 
- 
 
 void step(double *t, double *theta, double *omega, double *prevOmega )
 {
@@ -53,6 +54,9 @@ void step(double *t, double *theta, double *omega, double *prevOmega )
     *prevOmega=*omega; //sets previous omega before omega is updated
     *omega = *omega + h/6*(j1+2*j2+2*j3+j4);
     *t = *t + h;
+ 
+//	updatePoints(theta, omega);
 }
+
 
 #endif

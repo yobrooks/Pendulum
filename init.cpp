@@ -37,7 +37,7 @@ void init(void)
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHT1);
-
+	glEnable(GL_LIGHT3);
 	//set properties for light 0
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPosOne);
         glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDifOne);
@@ -51,13 +51,8 @@ void init(void)
         glLightfv(GL_LIGHT1, GL_SPECULAR, lightDifTwo);
 	
 	//set properties for light 2
-/*	glLightfv(GL_LIGHT2, GL_POSITION, lightPosTwo);
-        glLightfv(GL_LIGHT2, GL_DIFFUSE, lightDifOne);
-        glLightfv(GL_LIGHT2, GL_AMBIENT, lightAmbOne);
-        glLightfv(GL_LIGHT2, GL_SPECULAR, lightDifOne);*/
-        #endif
 
-	glEnable(GL_LIGHT3);
+        #endif
 }
 
 #endif

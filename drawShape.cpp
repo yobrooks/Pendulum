@@ -17,14 +17,7 @@ GLfloat spotPos [] = {8.0, 0.0, 3.5, 1.0};
 GLfloat spotLight [] = {0.0, 1.0, 0.0, 1.0};
 GLfloat direction [] = {-2.0, 0.0, -1.0};
 #endif
-/*GLfloat lightPosZero[] = {0.0, 0.0, 4.0, 1.0};
- * GLfloat lightDifZero[] = {1.0, 0.2, 1.0, 0.7};
- * GLfloat lightAmbZero[] ={1.0, 0.2, 1.0, 0.3};
- * GLfloat lightPosOne[] = {5.0, 5.0, 4.0, 1.0};
- * GLfloat lightPosTwo[] = {5.0, -5.0, 4.0, 1.0};
- * GLfloat lightDifOne[] = {0.0, 0.0, 1.0, .7};
- * GLfloat lightAmbOne[] ={0.0, 0.0, 1.0, 0.3};
- */
+
 void drawLights()
 {
 	//purple light
@@ -104,11 +97,14 @@ void setSpotlight()
 //draw the sphere and string textured version
 void drawSphereText()
 {
+	#ifdef LIGHTING
 	setSpotlight();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColorMaterial(GL_FRONT_AND_BACK, GL_SPECULAR);
+	#endif
+
 	//draw ball
-	drawLights();
+//	drawLights();
 	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	GLUquadric *disco;
 	disco = gluNewQuadric();
@@ -122,7 +118,6 @@ void drawSphereText()
 	#ifdef LIGHTING
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
-	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifRed);
 	#endif
 
 	gluSphere(disco, 0.6, 40, 40); //draw sphere
