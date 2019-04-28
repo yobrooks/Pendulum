@@ -10,13 +10,13 @@
 
 //initialize vector of textures
 std::vector<GLuint> textures;
-GLfloat lightPosZero[] = {0.0, 0.0, 3.0, 1.0};
-GLfloat lightDifZero[] = {1.0, 0.2, 1.0, 0.7};
-GLfloat lightAmbZero[] ={1.0, 0.2, 1.0, 0.05};
-GLfloat lightPosOne[] = {5.0, 5.0, 3.0, 1.0};
-GLfloat lightPosTwo[] = {5.0, -5.0, 3.0, 1.0};
-GLfloat lightDifOne[] = {0.0, 0.0, 1.0, .7};
-GLfloat lightAmbOne[] ={0.0, 0.0, 1.0, 0.05};
+//GLfloat lightPosZero[] = {0.0, 0.0, 3.0, 1.0};
+GLfloat lightDifOne[] = {1.0, 0.2, 1.0, 0.7};
+GLfloat lightAmbOne[] = {1.0, 0.2, 1.0, 0.05};
+GLfloat lightPosOne[] = {0.0, 5.0, 3.5, 1.0};
+GLfloat lightPosTwo[] = {0.0, -5.0, 3.5, 1.0};
+GLfloat lightDifTwo[] = {0.0, 0.0, 1.0, .7};
+GLfloat lightAmbTwo[] = {0.0, 0.0, 1.0, 0.05};
 void init(void)
 {
     glClearColor (0.0, 0.0, 0.0, 0.0);
@@ -36,26 +36,25 @@ void init(void)
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHT1);
-	glEnable(GL_LIGHT2);
+	//glEnable(GL_LIGHT1);
 
 	//set properties for light 0
-	glLightfv(GL_LIGHT0, GL_POSITION, lightPosZero);
-        glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDifZero);
-        glLightfv(GL_LIGHT0, GL_AMBIENT, lightAmbZero);
-        glLightfv(GL_LIGHT0, GL_SPECULAR, lightDifZero);	
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPosOne);
+        glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDifOne);
+        glLightfv(GL_LIGHT0, GL_AMBIENT, lightAmbOne);
+        glLightfv(GL_LIGHT0, GL_SPECULAR, lightDifOne);	
 
 	//set properties for light 1
-	glLightfv(GL_LIGHT1, GL_POSITION, lightPosOne);
-        glLightfv(GL_LIGHT1, GL_DIFFUSE, lightDifOne);
-        glLightfv(GL_LIGHT1, GL_AMBIENT, lightAmbOne);
-        glLightfv(GL_LIGHT1, GL_SPECULAR, lightDifOne);
+	glLightfv(GL_LIGHT1, GL_POSITION, lightPosTwo);
+        glLightfv(GL_LIGHT1, GL_DIFFUSE, lightDifTwo);
+        glLightfv(GL_LIGHT1, GL_AMBIENT, lightAmbTwo);
+        glLightfv(GL_LIGHT1, GL_SPECULAR, lightDifTwo);
 	
 	//set properties for light 2
-	glLightfv(GL_LIGHT2, GL_POSITION, lightPosTwo);
+/*	glLightfv(GL_LIGHT2, GL_POSITION, lightPosTwo);
         glLightfv(GL_LIGHT2, GL_DIFFUSE, lightDifOne);
         glLightfv(GL_LIGHT2, GL_AMBIENT, lightAmbOne);
-        glLightfv(GL_LIGHT2, GL_SPECULAR, lightDifOne);
+        glLightfv(GL_LIGHT2, GL_SPECULAR, lightDifOne);*/
         #endif
 
 	glEnable(GL_LIGHT3);

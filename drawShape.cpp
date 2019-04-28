@@ -9,7 +9,7 @@
 
 //draw the untextured pendulum ball and string
 #ifdef LIGHTING
-GLfloat lightDifTwo[] = {1.0, 0.2, 1.0, 1.0};
+GLfloat lightDifPurp[] = {1.0, 0.0, 0.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat shine = 100.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
@@ -27,24 +27,21 @@ GLfloat direction [] = {6.0, 0.0, -2.0};
  */
 void drawLights()
 {
-/*	glPushMatrix();
-	glTranslatef(0.0, 0.0, 3.0);
+	//purple light
+	glPushMatrix();
+	glTranslatef(0.0, 5.0, 3.5);
 	glutWireSphere(0.5, 20, 20);	
 	glPopMatrix();
 	
+	//blue light
 	glPushMatrix();	
-	glTranslatef(5.0, 5.0, 3.0);
+	glTranslatef(0.0, -5.0, 3.5);
 	glutWireSphere(0.5, 20, 20);
 	glPopMatrix();
 
-	glPushMatrix();
-	glTranslatef(5.0, -5.0, 3.0);
-	glutWireSphere(0.5, 20, 20);
-	glPopMatrix();*/
-
 //spotlight Pos
 	
-	glColor3f(1.0, 0.0, 0.0);
+/*	glColor3f(1.0, 0.0, 0.0);
 	glPushMatrix();
 	glTranslatef(-3.0, 0.0, 4.0);
 	glutSolidSphere(0.5, 20, 20);
@@ -54,7 +51,7 @@ void drawLights()
 	glPushMatrix();
 	glTranslatef(6.0, 0.0, -2.0);
 	glutWireCube(0.5);
-	glPopMatrix();
+	glPopMatrix();*/
 }
 
 void drawSphereColor()
@@ -109,7 +106,7 @@ void drawSphereText()
 {
 //	setSpotlight();
 	//draw ball
-//	drawLights();
+	drawLights();
 	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	GLUquadric *disco;
 	disco = gluNewQuadric();
@@ -123,7 +120,7 @@ void drawSphereText()
 	#ifdef LIGHTING
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
-	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifTwo);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifPurp);
 	#endif
 
 	gluSphere(disco, 0.6, 40, 40); //draw sphere
