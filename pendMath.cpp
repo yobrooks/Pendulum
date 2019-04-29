@@ -10,8 +10,12 @@
 //all functions provided by Dr. Pounds
 
 int Nstep = 1000000;
-//:std::vector<double> gPointsX(2000);
-//std::vector<double> gPointsY(2000);
+double A = 0.0;
+
+void kick()
+{
+	A = A+8;
+}
 
 double thetadot(double t, double theta, double omega)
 {
@@ -22,11 +26,11 @@ double omegadot(double t, double theta, double omega)
 {
    static double R = 1.00;  // Length of pendulum  (meters)
    static double g = 9.80;  // Normalized gravitational constant  (m/s^2)
-   static double b = 0.15;  // Frictional damping constant
+   static double b = 0.005;  // Frictional damping constant
    static double m = 1.00;  // Mass in normalized gravitational units (kg)
-   static double A = 0.00;  // Amplitude of initial driving force
+ //  static double A = 0.00;  // Amplitude of initial driving force
    static double k = 0.00;  // Frequency parameter of initial driving force
-
+	
    double num, denom;
 
    num = -b*omega + A*cos(k*t);
@@ -54,8 +58,8 @@ void step(double *t, double *theta, double *omega, double *prevOmega )
     *prevOmega=*omega; //sets previous omega before omega is updated
     *omega = *omega + h/6*(j1+2*j2+2*j3+j4);
     *t = *t + h;
- 
 //	updatePoints(theta, omega);
+	//A = 0.0;
 }
 
 

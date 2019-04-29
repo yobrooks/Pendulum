@@ -29,6 +29,15 @@ void updatePoints(double ptheta, double pomega)
 	{
 		count = 0;
 	}
+
+	std::cout << A << std::endl;
+}
+
+void clearPoints()
+{
+	gPointsX.clear();
+	gPointsY.clear();
+	count = 0;	
 }
 
 void drawPoints()
