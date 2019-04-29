@@ -26,7 +26,7 @@ double omegadot(double t, double theta, double omega)
 {
    static double R = 1.00;  // Length of pendulum  (meters)
    static double g = 9.80;  // Normalized gravitational constant  (m/s^2)
-   static double b = 0.005;  // Frictional damping constant
+   static double b = 0.002;  // Frictional damping constant
    static double m = 1.00;  // Mass in normalized gravitational units (kg)
  //  static double A = 0.00;  // Amplitude of initial driving force
    static double k = 0.00;  // Frequency parameter of initial driving force

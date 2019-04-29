@@ -129,7 +129,7 @@ void drawSphereText()
 	cord = gluNewQuadric();
 	gluQuadricTexture(cord, GL_TRUE);
 	glPushMatrix();
-        glTranslated(5.0, 0.0, 2.5);
+        glTranslated(5.2, 0.0, 2.0);
         glTranslated(0.0, 0.0, 2.0); //swings with the ball
         glRotated((double)180*theta/M_PI,0.0, 1.0, 0.0);
         glTranslated(0.0, 0.0, -2.0);
@@ -137,11 +137,9 @@ void drawSphereText()
         gluCylinder(cord,
                 (GLdouble) 0.05,
                 (GLdouble) 0.05,
-                (GLdouble) 1.5,
+                (GLdouble) 2.5,
                 (GLint) 10, (GLint) 10);
         glPopMatrix();
-
-//	drawLights();
 	
 }
 

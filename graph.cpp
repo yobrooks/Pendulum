@@ -30,7 +30,7 @@ void updatePoints(double ptheta, double pomega)
 		count = 0;
 	}
 
-	std::cout << A << std::endl;
+	//std::cout << A << std::endl;
 }
 
 void clearPoints()
