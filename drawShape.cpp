@@ -9,7 +9,6 @@
 
 //draw the untextured pendulum ball and string
 #ifdef LIGHTING
-GLfloat lightDifRed[] = {1.0, 0.0, 0.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 0.5};
 GLfloat shine = 75.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
