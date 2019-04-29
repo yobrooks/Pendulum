@@ -13,38 +13,34 @@ GLfloat lightDifRed[] = {1.0, 0.0, 0.0, 1.0};
 GLfloat white[] = {1.0, 1.0, 1.0, 0.5};
 GLfloat shine = 75.0;
 GLfloat black [] = {0.0, 0.0, 0.0, 1.0};
-GLfloat spotPos [] = {8.0, 0.0, 3.5, 1.0};
+GLfloat spotPos [] = {14.5, 0.0, 3.5, 1.0};
 GLfloat spotLight [] = {0.0, 1.0, 0.0, 1.0};
 GLfloat direction [] = {-2.0, 0.0, -1.0};
 #endif
 
 void drawLights()
 {
-	//purple light
-	glPushMatrix();
-	glTranslatef(0.0, 5.0, 3.5);
-	glutWireSphere(0.5, 20, 20);	
-	glPopMatrix();
-	
-	//blue light
-	glPushMatrix();	
-	glTranslatef(0.0, -5.0, 3.5);
-	glutWireSphere(0.5, 20, 20);
-	glPopMatrix();
 
 //spotlight Pos
 	
-	glColor3f(1.0, 0.0, 0.0);
-	glPushMatrix();
-	glTranslatef(8.0, 0.0, 3.5);
-	glutSolidCube(0.5);
-	glPopMatrix();
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
 
-//direction
+	 glBindTexture(GL_TEXTURE_2D, textures[5]);
+        GLUquadric *light;
+        light = gluNewQuadric();
+        gluQuadricTexture(light, GL_TRUE);
+
+	glColor3f(1.0,1.0, 1.0);
 	glPushMatrix();
-	glTranslatef(5.0, 0.0, -1.0);
-	glutWireCube(0.5);
-	glPopMatrix();
+	glTranslatef(15.0, 0.0, 3.5);
+	gluCylinder(light,
+                (GLdouble) .20,
+                (GLdouble) .2,
+                (GLdouble) .75,
+                (GLint) 30, (GLint) 30);
+        glPopMatrix();
+
 }
 
 void drawSphereColor()
@@ -99,12 +95,13 @@ void drawSphereText()
 {
 	#ifdef LIGHTING
 	setSpotlight();
-	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-	glColorMaterial(GL_FRONT_AND_BACK, GL_SPECULAR);
+	//glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+//	glColorMaterial(GL_FRONT_AND_BACK, GL_SPECULAR);
+	drawLights();
 	#endif
 
 	//draw ball
-//	drawLights();
+	//drawLights();
 	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	GLUquadric *disco;
 	disco = gluNewQuadric();
@@ -118,6 +115,7 @@ void drawSphereText()
 	#ifdef LIGHTING
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, white);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &shine);
+	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, lightDifRed);
 	#endif
 
 	gluSphere(disco, 0.6, 40, 40); //draw sphere

@@ -29,14 +29,15 @@ void init(void)
     GLuint tex3 = loadTexture("./textures/wall 2.jpg"); textures.push_back(tex3);
     GLuint tex4 = loadTexture("./textures/disco ball.jpg"); textures.push_back(tex4);
     GLuint tex5 = loadTexture("./textures/cord.jpg"); textures.push_back(tex5);
+    GLuint tex6 = loadTexture("./textures/light.jpg"); textures.push_back(tex6);
     #endif
 
 	#ifdef LIGHTING
 	//enable the lights
 	glShadeModel(GL_SMOOTH);
 	glEnable(GL_LIGHTING);
-//	glEnable(GL_LIGHT0);
-//	glEnable(GL_LIGHT1);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
 	glEnable(GL_LIGHT3);
 	//set properties for light 0
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPosOne);
