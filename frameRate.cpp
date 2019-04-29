@@ -76,6 +76,9 @@ void drawString(int x, int y, void *font, const char *string)
 //function to draw the period, fps, and fpp to the screen
 void drawPeriod()
 {
+	#ifdef LIGHTING
+	glDisable(GL_LIGHTING);
+	#endif
 	findPeriod(); //find the period and fpp
 	findFPS(); //find the fps
 
@@ -97,7 +100,7 @@ void drawPeriod()
         glPushMatrix();
         glLoadIdentity();
 
-        glColor3f(255, 255, 255);
+        glColor3ub(255, 255, 255);
         drawString(50, 100, GLUT_BITMAP_HELVETICA_12, charString);
 	drawString(50, 75, GLUT_BITMAP_HELVETICA_12, a);
 	drawString(50, 50, GLUT_BITMAP_HELVETICA_12, b);
@@ -110,6 +113,9 @@ void drawPeriod()
         free(charString);
 	free(a);
 	free(b);
+	#ifdef LIGHTING
+	glEnable(GL_LIGHTING);
+	#endif
 }
 
 #endif

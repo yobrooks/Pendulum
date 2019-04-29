@@ -4,7 +4,7 @@
 //global variables definition
 #include <math.h>
 
-const int WINDOW_HEIGHT = 500;
+const int WINDOW_HEIGHT = 800;
 const int VIEWPORT_POS = 100;
 int frame = 0;
 int oldTime = 0;

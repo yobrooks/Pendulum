@@ -23,6 +23,11 @@ void defineWallsText();
 void specialKeyboard(int,  int, int);
 void drawRoomColor();
 void drawSphereText();
+void setSpotlight();
+void drawGraphScreen();
 GLuint loadTexture(const char* );
-
+void drawAxes(int );
+void updatePoints(double, double);
+void kick();
+void clearPoints();
 #endif

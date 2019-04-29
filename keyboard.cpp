@@ -4,6 +4,7 @@
 #include "openGl.h"
 #include <iostream>
 #include "globals.h"
+#include "prototypes.h"
 //#include "Camera.h"
 
 //function to allow user to interact with the program with the keyboard
@@ -17,6 +18,20 @@ void keyboard(unsigned char key, int x, int y)
 		case 'a' : camera.moveLeft(1.0); glutPostRedisplay(); break;
 		case 's' : camera.moveBackward(1.0); glutPostRedisplay(); break;
 		case 'd' : camera.moveRight(1.0); glutPostRedisplay(); break;
+		case 'g' : 
+			 if(graphOn ==true) 
+			{ 
+				graphOn = false;
+			} 
+			else {
+				graphOn = true;
+			}
+			glutPostRedisplay();
+			break;
+		case 'k': kick();
+			  break;
+		case 'c': clearPoints();
+			  break;
 	}
 
 }
