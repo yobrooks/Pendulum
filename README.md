@@ -21,5 +21,7 @@ The program also features a 2D graph that can be toggled on and off that tracks 
 
 
 ## Setup and Execution
+To compile this program in a Unix/Linux environment, type `make` in the console. Then type `pend` in the console to run it. Note that the system must have OpenGL libraries.
+
 
 
