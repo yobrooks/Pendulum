@@ -21,7 +21,7 @@ The program also features a 2D graph that can be toggled on and off that tracks 
 
 
 ## Setup and Execution
-To compile this program in a Unix/Linux environment, type `make` in the console. Then type `pend` in the console to run it. Note that the system must have OpenGL libraries.
+To compile this program in a Unix/Linux environment, type `make` in the console. Then type `pend` in the console to run it. Note that the system must have OpenGL libraries. The user can then use the keyboard to make directional changes to the camera position (W,A,S,D for moving up/down/left/right and directional arrows for rotations). To toggle the graph press "g". 
 
 
 
